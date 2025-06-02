@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一个集成 - YOP MCP 开发者指南</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <!-- 自定义样式 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <img src="../assets/logo.svg" alt="YOP MCP Logo" class="h-8 w-auto">
+                        <span class="ml-2 text-xl font-semibold text-gray-900">YOP MCP</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-500 hover:text-gray-900">
+                        <i class="fas fa-home text-xl"></i>
+                    </a>
+                    <a href="https://github.com/yop-platform/yop-mcp" target="_blank" 
+                       class="text-gray-500 hover:text-gray-900">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- 页面标题 -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">实现您的第一个YOP支付集成</h1>
+            <p class="text-xl text-gray-600">跟随示例，体验AI驱动的支付开发新方式</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <!-- 示例场景介绍 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">场景：实现一个简单的支付功能</h2>
+                <p class="text-gray-600 mb-6">
+                    我们将通过YOP MCP实现一个基础的支付功能，包括：创建订单、查询订单状态等基本操作。
+                    通过这个示例，您将学习如何：
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                    <li>使用自然语言描述您的需求</li>
+                    <li>让AI助手为您生成符合最佳实践的集成代码</li>
+                    <li>处理支付流程中的各种场景</li>
+                </ul>
+            </div>
+
+            <!-- 提示词模板 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">构建有效的提示词</h2>
+                <p class="text-gray-600 mb-6">
+                    使用结构化的提示词，帮助AI更好地理解您的需求：
+                </p>
+                
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <pre class="text-gray-800"><code>## Context (背景信息)
+- 我正在使用Python开发一个电商网站的支付功能
+- 商户编号(merchantNo): "10012345678"
+- 我需要实现商品支付功能
+
+## Role (角色设定)
+你是一位精通YOP支付接口的高级Python工程师。
+
+## Instruction (具体指令)
+1. 请使用yop-mcp服务，获取"统一下单API"的详细文档
+2. 为我生成一个完整的Python示例代码，包含：
+   - 如何构建支付请求
+   - 如何处理支付结果
+   - 完整的错误处理
+   - 日志记录
+
+## Preset (输出格式)
+- 请提供详细的代码注释
+- 使用Python类封装支付功能
+- 包含完整的类型提示</code></pre>
+                </div>
+            </div>
+
+            <!-- AI响应示例 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">AI助手的响应</h2>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 rounded-lg p-4 mb-4">
+                        <p class="text-gray-700 mb-4">
+                            我将使用yop-mcp获取API文档，并为您生成符合最佳实践的支付集成代码。
+                        </p>
+                        
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <pre><code class="language-python">from dataclasses import dataclass
+from typing import Optional
+import logging
+from decimal import Decimal
+
+@dataclass
+class PaymentRequest:
+    order_id: str
+    amount: Decimal
+    description: str
+    
+class YopPaymentService:
+    def __init__(self, merchant_no: str):
+        self.merchant_no = merchant_no
+        self.logger = logging.getLogger(__name__)
+        
+    async def create_payment(self, request: PaymentRequest) -> dict:
+        """创建支付订单
+        
+        Args:
+            request: 支付请求参数
+            
+        Returns:
+            包含支付URL等信息的字典
+            
+        Raises:
+            PaymentError: 支付创建失败
+        """
+        try:
+            self.logger.info(f"Creating payment for order {request.order_id}")
+            
+            # 构建支付请求
+            payload = {
+                "merchantNo": self.merchant_no,
+                "orderId": request.order_id,
+                "amount": float(request.amount),
+                "description": request.description
+            }
+            
+            # 发起支付请求
+            response = await self._call_yop_api("pay/create", payload)
+            
+            self.logger.info(f"Payment created successfully for order {request.order_id}")
+            return response
+            
+        except Exception as e:
+            self.logger.error(f"Failed to create payment: {str(e)}")
+            raise PaymentError(f"支付创建失败: {str(e)}")
+            
+    async def query_payment(self, order_id: str) -> dict:
+        """查询支付订单状态
+        
+        Args:
+            order_id: 订单ID
+            
+        Returns:
+            订单状态信息
+        """
+        try:
+            self.logger.info(f"Querying payment status for order {order_id}")
+            
+            response = await self._call_yop_api("pay/query", {
+                "merchantNo": self.merchant_no,
+                "orderId": order_id
+            })
+            
+            self.logger.info(f"Payment status query successful for order {order_id}")
+            return response
+            
+        except Exception as e:
+            self.logger.error(f"Failed to query payment: {str(e)}")
+            raise PaymentError(f"支付查询失败: {str(e)}")
+
+# 使用示例
+async def main():
+    # 初始化支付服务
+    payment_service = YopPaymentService("10012345678")
+    
+    # 创建支付
+    request = PaymentRequest(
+        order_id="TEST_ORDER_001",
+        amount=Decimal("100.00"),
+        description="测试商品"
+    )
+    
+    try:
+        # 创建支付订单
+        result = await payment_service.create_payment(request)
+        print(f"支付创建成功: {result}")
+        
+        # 查询支付状态
+        status = await payment_service.query_payment(request.order_id)
+        print(f"支付状态: {status}")
+        
+    except PaymentError as e:
+        print(f"支付处理失败: {str(e)}")</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 进阶提示 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">进阶提示</h2>
+                
+                <div class="space-y-6">
+                    <!-- 提示1 -->
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">提供详细的上下文</h3>
+                        <p class="text-gray-600">
+                            在提示词中包含您的具体场景、技术栈、特殊需求等信息，这样AI能为您生成更精准的代码。
+                        </p>
+                    </div>
+                    
+                    <!-- 提示2 -->
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">分步骤提问</h3>
+                        <p class="text-gray-600">
+                            对于复杂功能，建议将需求拆分成多个步骤，逐步完成。比如先实现基础支付，再添加退款功能。
+                        </p>
+                    </div>
+                    
+                    <!-- 提示3 -->
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">指定代码风格</h3>
+                        <p class="text-gray-600">
+                            在提示词中说明您期望的代码风格、设计模式、错误处理方式等，AI会相应调整生成的代码。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 更多示例链接 -->
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">探索更多集成示例</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <a href="#" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <i class="fas fa-redo text-blue-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-gray-900">退款功能实现</h3>
+                    </a>
+                    <a href="#" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <i class="fas fa-bell text-blue-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-gray-900">支付通知处理</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 反馈区 -->
+        <div class="mt-12 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">这个示例对您有帮助吗？</h2>
+            <div class="flex justify-center space-x-4">
+                <button class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
+                    <i class="fas fa-thumbs-up mr-2"></i>
+                    有帮助
+                </button>
+                <button class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    <i class="fas fa-thumbs-down mr-2"></i>
+                    需要改进
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img src="../assets/logo-white.svg" alt="YOP MCP" class="h-8 mb-4">
+                    <p class="text-gray-400">
+                        YOP MCP (模型上下文协议) 是易宝支付为开发者精心打造的创新技术与工具集，
+                        让您通过AI助手轻松完成支付集成。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">资源</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">开发者文档</a></li>
+                        <li><a href="#" class="hover:text-white">API 文档</a></li>
+                        <li><a href="#" class="hover:text-white">示例代码</a></li>
+                        <li><a href="#" class="hover:text-white">常见问题</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">联系我们</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">技术支持</a></li>
+                        <li><a href="#" class="hover:text-white">商务合作</a></li>
+                        <li><a href="#" class="hover:text-white">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 易宝支付. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
