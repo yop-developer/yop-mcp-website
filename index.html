@@ -227,24 +227,75 @@
     </script>
 </head>
 <body class="bg-gray-100 text-gray-800">
+    <!-- 科技感背景系统 -->
+    <div class="tech-background">
+        <!-- 动态网格纹理 -->
+        <div class="tech-grid"></div>
+
+        <!-- 六边形纹理 -->
+        <div class="tech-hexagon-pattern"></div>
+
+        <!-- 电路纹理 -->
+        <div class="tech-circuit"></div>
+
+        <!-- 动态粒子系统 -->
+        <div class="tech-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <!-- 科技光束 -->
+        <div class="tech-beams">
+            <div class="beam"></div>
+            <div class="beam"></div>
+            <div class="beam"></div>
+            <div class="beam"></div>
+        </div>
+
+        <!-- 数据流效果 -->
+        <div class="tech-data-stream">
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+        </div>
+
+        <!-- 能量波纹 -->
+        <div class="tech-energy-waves">
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
+        </div>
+    </div>
+
     <!-- 滚动进度条 -->
     <div id="scroll-progress" class="scroll-progress-bar"></div>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 z-50 flex items-center justify-center">
-        <div class="text-center">
-            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto animate-pulse">
+    <!-- 增强的页面加载器 -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
                 <i class="fas fa-cubes text-white text-2xl"></i>
             </div>
-            <div class="text-white text-xl font-semibold mb-2">YOP MCP</div>
-            <div class="text-white/80 text-sm">正在加载...</div>
-            <div class="w-32 h-1 bg-white/20 rounded-full mt-4 overflow-hidden">
-                <div class="h-full bg-white rounded-full animate-pulse" style="width: 100%; animation: loading-progress 2s ease-in-out;"></div>
+            <div class="loader-text">YOP MCP</div>
+            <div class="text-white/80 text-sm mb-4">AI 驱动的支付集成革命</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
             </div>
         </div>
     </div>
     <!-- 顶部导航栏 -->
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300">
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full transition-all duration-300" style="z-index: 1000;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -927,185 +978,424 @@
     </section>
 
     <!-- Prerequisites Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden" id="prerequisites">
-        <!-- Background decorative elements -->
+    <section class="py-20 prerequisites-enhanced-bg relative overflow-hidden" id="prerequisites">
+        <!-- Enhanced Background System -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-20 left-20 w-32 h-32 bg-blue-200/20 rounded-full blur-2xl animate-pulse"></div>
-            <div class="absolute bottom-32 right-20 w-40 h-40 bg-purple-200/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-blue-100/30 to-purple-100/30 rounded-full blur-3xl"></div>
+            <!-- Dynamic gradient orbs with enhanced animations -->
+            <div class="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-cyan-400/30 to-blue-600/20 rounded-full blur-3xl animate-pulse prerequisites-orb-float" style="animation-delay: 0s;"></div>
+            <div class="absolute bottom-32 right-20 w-48 h-48 bg-gradient-to-br from-purple-400/25 to-pink-600/15 rounded-full blur-3xl animate-pulse prerequisites-orb-float" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-br from-emerald-400/20 to-teal-600/10 rounded-full blur-2xl animate-pulse prerequisites-orb-float" style="animation-delay: 4s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-36 h-36 bg-gradient-to-br from-orange-400/15 to-red-600/10 rounded-full blur-3xl animate-pulse prerequisites-orb-float" style="animation-delay: 6s;"></div>
 
-            <!-- Geometric patterns -->
-            <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
+            <!-- Enhanced geometric patterns with animation -->
+            <svg class="absolute inset-0 w-full h-full opacity-10 prerequisites-pattern-animate" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <pattern id="prereqPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                        <polygon points="50,0 100,50 50,100 0,50" fill="none" stroke="currentColor" stroke-width="1"/>
-                        <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    <pattern id="prereqPatternEnhanced" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+                        <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="url(#prereqGradient)" stroke-width="1.5"/>
+                        <circle cx="60" cy="60" r="25" fill="none" stroke="url(#prereqGradient)" stroke-width="0.8" opacity="0.6"/>
+                        <circle cx="60" cy="60" r="8" fill="url(#prereqGradient)" opacity="0.3"/>
+                        <path d="M30,30 L90,30 M30,90 L90,90 M30,30 L30,90 M90,30 L90,90" stroke="url(#prereqGradient)" stroke-width="0.5" opacity="0.4"/>
                     </pattern>
+                    <linearGradient id="prereqGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(6,182,212);stop-opacity:0.6"/>
+                        <stop offset="50%" style="stop-color:rgb(147,51,234);stop-opacity:0.4"/>
+                        <stop offset="100%" style="stop-color:rgb(59,130,246);stop-opacity:0.6"/>
+                    </linearGradient>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#prereqPattern)"/>
+                <rect width="100%" height="100%" fill="url(#prereqPatternEnhanced)"/>
             </svg>
+
+            <!-- Floating tech particles -->
+            <div class="prerequisites-particles">
+                <div class="prerequisites-particle" style="left: 15%; animation-delay: 0s;"></div>
+                <div class="prerequisites-particle" style="left: 35%; animation-delay: 3s;"></div>
+                <div class="prerequisites-particle" style="left: 55%; animation-delay: 6s;"></div>
+                <div class="prerequisites-particle" style="left: 75%; animation-delay: 9s;"></div>
+                <div class="prerequisites-particle" style="left: 85%; animation-delay: 12s;"></div>
+            </div>
+
+            <!-- Data flow lines -->
+            <div class="prerequisites-data-flow">
+                <div class="prerequisites-flow-line" style="left: 20%; animation-delay: 0s;"></div>
+                <div class="prerequisites-flow-line" style="left: 50%; animation-delay: 4s;"></div>
+                <div class="prerequisites-flow-line" style="left: 80%; animation-delay: 8s;"></div>
+            </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 fade-in-up">
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 text-sm font-medium mb-6">
-                    <i class="fas fa-check-circle mr-2"></i>
-                    准备工作
+            <div class="text-center mb-16 prerequisites-header-enhanced fade-in-up">
+                <!-- Enhanced badge with glow effect -->
+                <div class="inline-flex items-center px-6 py-3 rounded-full prerequisites-badge-enhanced text-sm font-bold mb-8 shadow-xl border border-emerald-300/30 backdrop-blur-sm">
+                    <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                        <i class="fas fa-check-circle text-white text-xs"></i>
+                    </div>
+                    <span class="bg-gradient-to-r from-emerald-700 to-green-700 bg-clip-text text-transparent font-bold">准备工作</span>
+                    <div class="ml-3 w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    在开始之前，请确保您已具备
+
+                <!-- Enhanced title with gradient and animation -->
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 prerequisites-title-enhanced leading-tight">
+                    <span class="bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
+                        在开始之前，
+                    </span>
+                    <span class="bg-gradient-to-r from-emerald-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent prerequisites-title-glow">
+                        请确保您已具备
+                    </span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    为了顺利完成 YOP MCP 的配置和使用，您需要准备以下环境和信息
+
+                <!-- Enhanced subtitle with better typography -->
+                <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed prerequisites-subtitle-enhanced">
+                    为了顺利完成 <span class="font-bold text-blue-600">YOP MCP</span> 的配置和使用，您需要准备以下
+                    <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold">环境和信息</span>
                 </p>
+
+                <!-- Progress indicator -->
+                <div class="mt-8 flex justify-center">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
+                        <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12 prerequisites-cards-container">
                 <!-- AI编程环境 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-xl card-shadow hover-scale p-6 md:p-8 tech-gradient-border group fade-in-up relative overflow-hidden" data-delay="0">
-                    <!-- Card background pattern -->
-                    <div class="absolute inset-0 opacity-5">
+                <div class="prerequisites-card-enhanced group fade-in-up relative overflow-hidden" data-delay="0">
+                    <!-- Enhanced glassmorphism background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-xl rounded-2xl"></div>
+
+                    <!-- Animated border gradient -->
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 p-[2px] prerequisites-border-animate">
+                        <div class="w-full h-full bg-white/5 rounded-2xl"></div>
+                    </div>
+
+                    <!-- Enhanced background pattern -->
+                    <div class="absolute inset-0 opacity-8">
                         <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <pattern id="aiPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                                <circle cx="10" cy="10" r="1" fill="currentColor"/>
-                            </pattern>
-                            <rect width="100%" height="100%" fill="url(#aiPattern)"/>
+                            <defs>
+                                <pattern id="aiPatternEnhanced" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                                    <circle cx="20" cy="20" r="2" fill="url(#aiGradient)" opacity="0.6"/>
+                                    <circle cx="10" cy="10" r="1" fill="url(#aiGradient)" opacity="0.4"/>
+                                    <circle cx="30" cy="30" r="1.5" fill="url(#aiGradient)" opacity="0.5"/>
+                                    <path d="M5,5 L35,35 M35,5 L5,35" stroke="url(#aiGradient)" stroke-width="0.3" opacity="0.3"/>
+                                </pattern>
+                                <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgb(147,51,234);stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:rgb(59,130,246);stop-opacity:0.6"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#aiPatternEnhanced)"/>
                         </svg>
                     </div>
 
-                    <div class="relative z-10">
-                        <div class="flex items-center mb-5">
-                            <div class="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg flex items-center justify-center feature-icon-glow shadow-lg" style="--glow-color: 147, 51, 234;">
-                                <i class="fas fa-robot text-purple-600 text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"></i>
+                    <!-- Floating particles -->
+                    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div class="absolute top-4 right-6 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-60 prerequisites-particle-float"></div>
+                        <div class="absolute top-8 left-8 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-40 prerequisites-particle-float" style="animation-delay: 1s;"></div>
+                        <div class="absolute bottom-6 right-8 w-2.5 h-2.5 bg-cyan-400 rounded-full animate-pulse opacity-50 prerequisites-particle-float" style="animation-delay: 2s;"></div>
+                    </div>
+
+                    <div class="relative z-10 p-8">
+                        <!-- Enhanced header with 3D icon -->
+                        <div class="flex items-center mb-6 prerequisites-header-3d">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 via-purple-600 to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl border border-purple-300/30 group-hover:shadow-purple-500/50 transition-all duration-500 prerequisites-icon-3d" style="--glow-color: 147, 51, 234;">
+                                <i class="fas fa-robot text-white text-2xl transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 drop-shadow-lg"></i>
                             </div>
-                            <h3 class="ml-4 text-xl font-semibold text-gray-900 group-hover:text-purple-700 transition-colors">AI编程环境</h3>
+                            <div class="ml-5">
+                                <h3 class="text-2xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors duration-300 prerequisites-title-3d">AI编程环境</h3>
+                                <div class="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-1 group-hover:w-16 transition-all duration-300"></div>
+                            </div>
                         </div>
-                        <p class="text-gray-600 mb-4 text-sm">您需要具备以下任一环境：</p>
-                        <ul class="space-y-2.5 text-sm">
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">支持工具调用的IDE (如Cursor)</span>
+
+                        <p class="text-gray-600 mb-6 text-base leading-relaxed">您需要具备以下任一环境：</p>
+
+                        <!-- Enhanced list with better animations -->
+                        <ul class="space-y-4 text-base mb-6">
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">支持工具调用的IDE (如Cursor)</span>
                             </li>
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">AI编程工具 (如Cline, RooCode)</span>
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">AI编程工具 (如Cline, RooCode)</span>
                             </li>
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">通过API调用的LLM (如Claude)</span>
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">通过API调用的LLM (如Claude)</span>
                             </li>
                         </ul>
-                        <div class="mt-5 p-3 bg-gradient-to-r from-purple-50 to-purple-100 rounded-md border-l-4 border-purple-500 shadow-sm">
-                            <p class="text-purple-700 text-xs"><i class="fas fa-lightbulb mr-1.5 text-yellow-500"></i>推荐使用支持MCP协议的现代AI开发工具</p>
+
+                        <!-- Enhanced tip box -->
+                        <div class="p-4 bg-gradient-to-r from-purple-50 via-purple-100 to-blue-50 rounded-xl border border-purple-200/50 shadow-lg backdrop-blur-sm prerequisites-tip-enhanced">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                                    <i class="fas fa-lightbulb text-white text-xs"></i>
+                                </div>
+                                <p class="text-purple-800 text-sm font-medium leading-relaxed">推荐使用支持MCP协议的AI开发工具</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Python环境 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-xl card-shadow hover-scale p-6 md:p-8 tech-gradient-border group fade-in-up relative overflow-hidden" data-delay="1">
-                    <!-- Card background pattern -->
-                    <div class="absolute inset-0 opacity-5">
+                <div class="prerequisites-card-enhanced group fade-in-up relative overflow-hidden" data-delay="1">
+                    <!-- Enhanced glassmorphism background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-xl rounded-2xl"></div>
+
+                    <!-- Animated border gradient -->
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-teal-500/20 p-[2px] prerequisites-border-animate">
+                        <div class="w-full h-full bg-white/5 rounded-2xl"></div>
+                    </div>
+
+                    <!-- Enhanced background pattern -->
+                    <div class="absolute inset-0 opacity-8">
                         <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <pattern id="pythonPattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-                                <path d="M15,5 L25,15 L15,25 L5,15 Z" fill="none" stroke="currentColor" stroke-width="0.5"/>
-                            </pattern>
-                            <rect width="100%" height="100%" fill="url(#pythonPattern)"/>
+                            <defs>
+                                <pattern id="pythonPatternEnhanced" x="0" y="0" width="45" height="45" patternUnits="userSpaceOnUse">
+                                    <path d="M22.5,5 L40,22.5 L22.5,40 L5,22.5 Z" fill="none" stroke="url(#pythonGradient)" stroke-width="1" opacity="0.6"/>
+                                    <circle cx="22.5" cy="22.5" r="8" fill="none" stroke="url(#pythonGradient)" stroke-width="0.8" opacity="0.4"/>
+                                    <circle cx="22.5" cy="22.5" r="3" fill="url(#pythonGradient)" opacity="0.5"/>
+                                </pattern>
+                                <linearGradient id="pythonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgb(59,130,246);stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:rgb(6,182,212);stop-opacity:0.6"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#pythonPatternEnhanced)"/>
                         </svg>
                     </div>
 
-                    <div class="relative z-10">
-                        <div class="flex items-center mb-5">
-                            <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center feature-icon-glow shadow-lg" style="--glow-color: 59, 130, 246;">
-                                <i class="fab fa-python text-blue-600 text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"></i>
+                    <!-- Floating particles -->
+                    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div class="absolute top-6 right-4 w-3 h-3 bg-blue-400 rounded-full animate-pulse opacity-60 prerequisites-particle-float"></div>
+                        <div class="absolute top-4 left-6 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-40 prerequisites-particle-float" style="animation-delay: 1.5s;"></div>
+                        <div class="absolute bottom-8 right-6 w-2.5 h-2.5 bg-teal-400 rounded-full animate-pulse opacity-50 prerequisites-particle-float" style="animation-delay: 0.5s;"></div>
+                    </div>
+
+                    <div class="relative z-10 p-8">
+                        <!-- Enhanced header with 3D icon -->
+                        <div class="flex items-center mb-6 prerequisites-header-3d">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center shadow-2xl border border-blue-300/30 group-hover:shadow-blue-500/50 transition-all duration-500 prerequisites-icon-3d" style="--glow-color: 59, 130, 246;">
+                                <i class="fab fa-python text-white text-2xl transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 drop-shadow-lg"></i>
                             </div>
-                            <h3 class="ml-4 text-xl font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Python环境</h3>
+                            <div class="ml-5">
+                                <h3 class="text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 prerequisites-title-3d">Python环境</h3>
+                                <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mt-1 group-hover:w-16 transition-all duration-300"></div>
+                            </div>
                         </div>
-                        <p class="text-gray-600 mb-4 text-sm">确保您的系统已安装：</p>
-                        <ul class="space-y-2.5 text-sm">
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">Python 3.8 或更高版本</span>
+
+                        <p class="text-gray-600 mb-6 text-base leading-relaxed">确保您的系统已安装：</p>
+
+                        <!-- Enhanced list with better animations -->
+                        <ul class="space-y-4 text-base mb-6">
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">Python 3.8 或更高版本</span>
                             </li>
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">包管理工具 uv (推荐) 或 pip</span>
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">包管理工具 uv (推荐) 或 pip</span>
                             </li>
                         </ul>
-                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-lg p-4 mt-5 quick-start-code-block shadow-lg border border-gray-700">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-terminal text-gray-400 mr-2"></i>
-                                <span class="text-xs font-medium text-gray-300">快速检查</span>
-                                <div class="ml-auto flex space-x-1">
-                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div>
-                                    <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                                </div>
-                            </div>
-                            <code class="text-sm text-green-400 block whitespace-pre-wrap text-xs font-mono"># 检查Python版本
-python --version
 
-# 安装uv (推荐)
-curl -LsSf https://astral.sh/uv/install.sh | sh</code>
+                        <!-- Enhanced code block -->
+                        <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-slate-900 text-white rounded-xl p-5 shadow-2xl border border-gray-600/50 backdrop-blur-sm prerequisites-code-enhanced">
+                            <div class="flex items-center mb-3">
+                                <div class="flex space-x-1.5">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                                    <div class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                                </div>
+                                <span class="ml-auto text-gray-400 text-xs font-mono">Terminal</span>
+                            </div>
+                            <code class="text-sm text-green-400 block whitespace-pre-wrap font-mono leading-relaxed">
+<span class="text-gray-500"># 检查Python版本</span>
+<span class="text-cyan-400">python</span> <span class="text-yellow-400">--version</span>
+
+<span class="text-gray-500"># 安装uv (推荐)</span>
+<span class="text-cyan-400">curl</span> <span class="text-yellow-400">-LsSf</span> <span class="text-green-400">https://astral.sh/uv/install.sh</span> <span class="text-yellow-400">|</span> <span class="text-cyan-400">sh</span></code>
                         </div>
                     </div>
                 </div>
 
                 <!-- 易宝支付商户信息 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-xl card-shadow hover-scale p-6 md:p-8 tech-gradient-border group fade-in-up relative overflow-hidden" data-delay="2">
-                    <!-- Card background pattern -->
-                    <div class="absolute inset-0 opacity-5">
+                <div class="prerequisites-card-enhanced group fade-in-up relative overflow-hidden" data-delay="2">
+                    <!-- Enhanced glassmorphism background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-xl rounded-2xl"></div>
+
+                    <!-- Animated border gradient -->
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-teal-500/20 p-[2px] prerequisites-border-animate">
+                        <div class="w-full h-full bg-white/5 rounded-2xl"></div>
+                    </div>
+
+                    <!-- Enhanced background pattern -->
+                    <div class="absolute inset-0 opacity-8">
                         <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <pattern id="merchantPattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
-                                <rect x="5" y="5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="0.5"/>
-                                <circle cx="12.5" cy="12.5" r="3" fill="none" stroke="currentColor" stroke-width="0.3"/>
-                            </pattern>
-                            <rect width="100%" height="100%" fill="url(#merchantPattern)"/>
+                            <defs>
+                                <pattern id="merchantPatternEnhanced" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                                    <rect x="8" y="8" width="19" height="19" fill="none" stroke="url(#merchantGradient)" stroke-width="1" opacity="0.6"/>
+                                    <circle cx="17.5" cy="17.5" r="6" fill="none" stroke="url(#merchantGradient)" stroke-width="0.8" opacity="0.4"/>
+                                    <circle cx="17.5" cy="17.5" r="2" fill="url(#merchantGradient)" opacity="0.5"/>
+                                    <path d="M8,17.5 L27,17.5 M17.5,8 L17.5,27" stroke="url(#merchantGradient)" stroke-width="0.5" opacity="0.3"/>
+                                </pattern>
+                                <linearGradient id="merchantGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgb(16,185,129);stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:rgb(34,197,94);stop-opacity:0.6"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#merchantPatternEnhanced)"/>
                         </svg>
                     </div>
 
-                    <div class="relative z-10">
-                        <div class="flex items-center mb-5">
-                            <div class="w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 rounded-lg flex items-center justify-center feature-icon-glow shadow-lg" style="--glow-color: 16, 185, 129;">
-                                <i class="fas fa-id-card text-green-600 text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"></i>
+                    <!-- Floating particles -->
+                    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div class="absolute top-5 right-5 w-3 h-3 bg-emerald-400 rounded-full animate-pulse opacity-60 prerequisites-particle-float"></div>
+                        <div class="absolute top-8 left-4 w-2 h-2 bg-green-400 rounded-full animate-pulse opacity-40 prerequisites-particle-float" style="animation-delay: 2s;"></div>
+                        <div class="absolute bottom-6 right-7 w-2.5 h-2.5 bg-teal-400 rounded-full animate-pulse opacity-50 prerequisites-particle-float" style="animation-delay: 1s;"></div>
+                    </div>
+
+                    <div class="relative z-10 p-8">
+                        <!-- Enhanced header with 3D icon -->
+                        <div class="flex items-center mb-6 prerequisites-header-3d">
+                            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 via-green-600 to-teal-600 rounded-2xl flex items-center justify-center shadow-2xl border border-emerald-300/30 group-hover:shadow-emerald-500/50 transition-all duration-500 prerequisites-icon-3d" style="--glow-color: 16, 185, 129;">
+                                <i class="fas fa-id-card text-white text-2xl transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 drop-shadow-lg"></i>
                             </div>
-                            <h3 class="ml-4 text-xl font-semibold text-gray-900 group-hover:text-green-700 transition-colors">商户信息</h3>
+                            <div class="ml-5">
+                                <h3 class="text-2xl font-bold text-gray-900 group-hover:text-emerald-700 transition-colors duration-300 prerequisites-title-3d">商户信息</h3>
+                                <div class="w-12 h-1 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full mt-1 group-hover:w-16 transition-all duration-300"></div>
+                            </div>
                         </div>
-                        <p class="text-gray-600 mb-4 text-sm">实际API对接时需要：</p>
-                        <ul class="space-y-2.5 text-sm">
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">易宝支付商户编号 (merchantNo)</span>
+
+                        <p class="text-gray-600 mb-6 text-base leading-relaxed">实际API对接时需要：</p>
+
+                        <!-- Enhanced list with better animations -->
+                        <ul class="space-y-4 text-base mb-6">
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">易宝支付商户编号 (merchantNo)</span>
                             </li>
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">应用密钥对 (YOP MCP可协助生成)</span>
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">应用密钥对 (YOP MCP可协助生成)</span>
                             </li>
-                            <li class="flex items-start group/item">
-                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2.5 flex-shrink-0 transition-transform group-hover/item:scale-110"></i>
-                                <span class="group-hover/item:text-gray-800 transition-colors">测试时可使用沙箱环境数据</span>
+                            <li class="flex items-start group/item prerequisites-list-item">
+                                <div class="w-6 h-6 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-blue-400/50">
+                                    <i class="fas fa-info text-white text-xs"></i>
+                                </div>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium">测试时可使用沙箱环境数据</span>
                             </li>
                         </ul>
-                        <div class="mt-5 p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-md border-l-4 border-blue-500 shadow-sm">
-                            <p class="text-blue-700 text-xs"><i class="fas fa-info-circle mr-1.5 text-blue-500"></i>沙箱环境提供模拟数据，方便开发测试</p>
+
+                        <!-- Enhanced tip box -->
+                        <div class="p-4 bg-gradient-to-r from-blue-50 via-cyan-100 to-teal-50 rounded-xl border border-blue-200/50 shadow-lg backdrop-blur-sm prerequisites-tip-enhanced">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                                    <i class="fas fa-info text-white text-xs"></i>
+                                </div>
+                                <p class="text-blue-800 text-sm font-medium leading-relaxed">沙箱环境提供模拟数据，方便开发测试</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 md:p-12 shadow-xl fade-in-up">
-                <div class="max-w-2xl mx-auto">
-                    <div class="flex justify-center mb-5">
-                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center"><i class="fas fa-rocket text-white text-3xl"></i></div>
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">准备就绪？让我们开始吧！</h3>
-                    <p class="text-blue-100 mb-6">所有准备工作完成后，您就可以开始配置 YOP MCP 并体验 AI 驱动的支付集成了。</p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#quick-start" class="hero-button-primary inline-flex items-center justify-center px-7 py-3 text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-colors">
-                            <i class="fas fa-arrow-down mr-2"></i>开始配置
-                        </a>
-                        <a href="pages/quick-start.html" class="hero-button-secondary inline-flex items-center justify-center px-7 py-3 text-base font-medium rounded-lg text-white border-2 border-white hover:bg-white/10 transition-colors">
-                            <i class="fas fa-book mr-2"></i>详细教程
-                        </a>
+            <!-- Enhanced CTA Section -->
+            <div class="prerequisites-cta-enhanced relative overflow-hidden rounded-3xl shadow-2xl fade-in-up">
+                <!-- Enhanced gradient background with animation -->
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 prerequisites-cta-bg-animate"></div>
+
+                <!-- Overlay patterns -->
+                <div class="absolute inset-0 opacity-20">
+                    <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="ctaPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                                <circle cx="30" cy="30" r="2" fill="white" opacity="0.6"/>
+                                <circle cx="15" cy="15" r="1" fill="white" opacity="0.4"/>
+                                <circle cx="45" cy="45" r="1.5" fill="white" opacity="0.5"/>
+                                <path d="M0,30 L60,30 M30,0 L30,60" stroke="white" stroke-width="0.3" opacity="0.3"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#ctaPattern)"/>
+                    </svg>
+                </div>
+
+                <!-- Floating elements -->
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute top-6 left-8 w-4 h-4 bg-white/30 rounded-full animate-pulse prerequisites-cta-float"></div>
+                    <div class="absolute top-12 right-12 w-3 h-3 bg-white/20 rounded-full animate-pulse prerequisites-cta-float" style="animation-delay: 1s;"></div>
+                    <div class="absolute bottom-8 left-12 w-5 h-5 bg-white/25 rounded-full animate-pulse prerequisites-cta-float" style="animation-delay: 2s;"></div>
+                    <div class="absolute bottom-6 right-8 w-2 h-2 bg-white/30 rounded-full animate-pulse prerequisites-cta-float" style="animation-delay: 3s;"></div>
+                </div>
+
+                <div class="relative z-10 p-10 md:p-16 text-center">
+                    <div class="max-w-3xl mx-auto">
+                        <!-- Enhanced rocket icon with glow -->
+                        <div class="flex justify-center mb-8">
+                            <div class="relative">
+                                <!-- Outer glow ring -->
+                                <div class="absolute inset-0 w-24 h-24 bg-white/30 rounded-full animate-ping"></div>
+                                <!-- Icon container -->
+                                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 shadow-2xl relative z-10 prerequisites-cta-icon">
+                                    <i class="fas fa-rocket text-white text-4xl drop-shadow-lg animate-pulse"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Enhanced title -->
+                        <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg prerequisites-cta-title">
+                            准备就绪？让我们开始吧！
+                        </h3>
+
+                        <!-- Enhanced subtitle -->
+                        <p class="text-xl md:text-2xl text-blue-100 mb-10 leading-relaxed drop-shadow-sm">
+                            所有准备工作完成后，您就可以开始配置 <span class="font-bold text-white">YOP MCP</span> 并体验
+                            <span class="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-bold">AI 驱动的支付集成</span>了。
+                        </p>
+
+                        <!-- Enhanced buttons -->
+                        <div class="flex flex-col sm:flex-row justify-center gap-6">
+                            <a href="#quick-start" class="prerequisites-cta-button-primary group relative overflow-hidden inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-blue-600 bg-white hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/50">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <i class="fas fa-arrow-down mr-3 relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:animate-bounce"></i>
+                                <span class="relative z-10">开始配置</span>
+                            </a>
+                            <a href="pages/quick-start.html" class="prerequisites-cta-button-secondary group relative overflow-hidden inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-white border-2 border-white hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-2xl backdrop-blur-sm">
+                                <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <i class="fas fa-book mr-3 relative z-10 transition-transform duration-300 group-hover:scale-110"></i>
+                                <span class="relative z-10">详细教程</span>
+                            </a>
+                        </div>
+
+                        <!-- Progress stats -->
+                        <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
+                            <div class="text-center group">
+                                <div class="text-3xl font-bold text-white mb-2 prerequisites-cta-stat transition-all duration-300 group-hover:scale-110">3</div>
+                                <div class="text-sm text-blue-100 opacity-80 transition-opacity duration-300 group-hover:opacity-100">准备项目</div>
+                            </div>
+                            <div class="text-center group">
+                                <div class="text-3xl font-bold text-white mb-2 prerequisites-cta-stat transition-all duration-300 group-hover:scale-110" style="animation-delay: 0.5s;">5min</div>
+                                <div class="text-sm text-blue-100 opacity-80 transition-opacity duration-300 group-hover:opacity-100">配置时间</div>
+                            </div>
+                            <div class="text-center group">
+                                <div class="text-3xl font-bold text-white mb-2 prerequisites-cta-stat transition-all duration-300 group-hover:scale-110" style="animation-delay: 1s;">∞</div>
+                                <div class="text-sm text-blue-100 opacity-80 transition-opacity duration-300 group-hover:opacity-100">AI 可能性</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1113,7 +1403,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh</code>
     </section>
 
     <!-- Quick Start Section -->
-    <section class="py-20 section-bg-pattern" id="quick-start">
+    <section class="py-20 gradient-bg hero-pattern" id="quick-start">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-up">
                 <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 text-sm font-medium mb-6">
@@ -1740,23 +2030,32 @@ uv pip install yop-mcp
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Hide loading screen after page loads
+            // 增强的页面加载器处理
             setTimeout(() => {
-                const loadingScreen = document.getElementById('loading-screen');
-                if (loadingScreen) {
-                    loadingScreen.classList.add('fade-out');
+                const pageLoader = document.getElementById('page-loader');
+                if (pageLoader) {
+                    pageLoader.classList.add('fade-out');
                     setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 500);
+                        pageLoader.style.display = 'none';
+                        // 触发页面内容的入场动画
+                        document.body.classList.add('page-loaded');
+
+                        // 延迟触发各个元素的动画
+                        setTimeout(() => {
+                            const heroElements = document.querySelectorAll('.hero-section-enhanced .fade-in-up');
+                            heroElements.forEach((el, index) => {
+                                setTimeout(() => {
+                                    el.classList.add('visible');
+                                }, index * 200);
+                            });
+                        }, 300);
+                    }, 800);
                 }
-            }, 1500); // Show loading for 1.5 seconds
+            }, 2800); // 显示加载器2.8秒，让进度条完成
 
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1889,15 +2188,7 @@ uv pip install yop-mcp
                 if (window.scrollY > 50) nav.classList.add('nav-scrolled');
                 else nav.classList.remove('nav-scrolled');
 
-                // Back to top button visibility
-                const backToTopButton = document.getElementById('back-to-top');
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.remove('opacity-0');
-                    backToTopButton.classList.add('opacity-100');
-                } else {
-                    backToTopButton.classList.remove('opacity-100');
-                    backToTopButton.classList.add('opacity-0');
-                }
+
             });
 
             // Mobile menu toggle
@@ -1912,13 +2203,7 @@ uv pip install yop-mcp
             // Set current year in footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // Back to Top button functionality
-            const backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                backToTopButton.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
+
 
             // Enhanced demo video interaction
             const demoVideoContainer = document.querySelector('.demo-video-container');
