@@ -837,10 +837,7 @@ nav.nav-scrolled {
 }
 
 #quick-start .inline-flex {
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(16, 185, 129, 0.9)) !important;
-    color: #FFFFFF !important;
-    border: 1px solid rgba(34, 197, 94, 0.5);
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    /* 移除强制样式，让Tailwind类生效 */
     animation: quickStartBadgePulse 2s ease-in-out infinite;
 }
 
@@ -3653,6 +3650,256 @@ img[loading="lazy"].loaded {
     .prerequisites-code-enhanced::before,
     .prerequisites-cta-button-primary::before,
     .prerequisites-cta-button-secondary::before {
+        display: none !important;
+    }
+}
+
+/* ===== 快速开始板块增强样式 ===== */
+.quick-start-header-enhanced {
+    position: relative;
+}
+
+.quick-start-badge-enhanced {
+    background: linear-gradient(135deg,
+        rgba(34, 197, 94, 0.1) 0%,
+        rgba(16, 185, 129, 0.15) 50%,
+        rgba(34, 197, 94, 0.1) 100%);
+    animation: quickStartBadgeGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes quickStartBadgeGlow {
+    0% {
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+        transform: scale(1.02);
+    }
+}
+
+.quick-start-icon-pulse {
+    animation: quickStartIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes quickStartIconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.quick-start-title-enhanced {
+    animation: quickStartTitleFloat 4s ease-in-out infinite;
+}
+
+@keyframes quickStartTitleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.quick-start-title-glow {
+    position: relative;
+    animation: quickStartTitleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes quickStartTitleGlow {
+    0% { text-shadow: 0 0 10px rgba(34, 197, 94, 0.3); }
+    100% { text-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+}
+
+.quick-start-subtitle-enhanced {
+    animation: quickStartSubtitleFade 2s ease-in-out infinite alternate;
+}
+
+@keyframes quickStartSubtitleFade {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* ===== 快速开始卡片增强样式 ===== */
+.quick-start-cards-container {
+    perspective: 1000px;
+}
+
+.quick-start-card-enhanced {
+    background: transparent;
+    border-radius: 2rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-start-card-enhanced:hover {
+    transform: translateY(-15px) rotateX(8deg) rotateY(8deg) scale(1.03);
+    box-shadow:
+        0 30px 60px -12px rgba(0, 0, 0, 0.25),
+        0 0 50px rgba(34, 197, 94, 0.3);
+}
+
+/* 边框动画 */
+.quick-start-border-animate {
+    background-size: 300% 300%;
+    animation: quickStartBorderFlow 5s ease-in-out infinite;
+}
+
+@keyframes quickStartBorderFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* 粒子浮动动画 */
+.quick-start-particle-float {
+    animation: quickStartCardParticleFloat 8s ease-in-out infinite;
+}
+
+@keyframes quickStartCardParticleFloat {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-12px) translateX(6px) scale(1.3);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-6px) translateX(-3px) scale(0.9);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-18px) translateX(9px) scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* ===== 快速开始卡片内部元素增强样式 ===== */
+.quick-start-header-3d {
+    transform-style: preserve-3d;
+}
+
+.quick-start-icon-3d {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-start-icon-3d::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    border-radius: inherit;
+    transform: translateZ(-10px);
+    opacity: 0.3;
+    filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+.quick-start-card-enhanced:hover .quick-start-icon-3d::before {
+    transform: translateZ(-15px);
+    opacity: 0.5;
+}
+
+.quick-start-title-3d {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.quick-start-code-enhanced {
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-start-code-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+    transition: left 1s ease;
+}
+
+.quick-start-card-enhanced:hover .quick-start-code-enhanced::before {
+    left: 100%;
+}
+
+.quick-start-tip-enhanced {
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-start-tip-enhanced::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.quick-start-card-enhanced:hover .quick-start-tip-enhanced::before {
+    animation: quickStartShimmer 1.5s ease-in-out;
+}
+
+@keyframes quickStartShimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+}
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+    .quick-start-card-enhanced:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+
+    .quick-start-title-enhanced {
+        font-size: 2.5rem !important;
+    }
+
+    .quick-start-cards-container {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-start-particle-float {
+        animation-duration: 6s;
+    }
+
+    .quick-start-title-enhanced {
+        font-size: 2rem !important;
+    }
+
+    .quick-start-cards-container {
+        gap: 1.5rem;
+    }
+}
+
+/* ===== 可访问性增强 ===== */
+@media (prefers-reduced-motion: reduce) {
+    .quick-start-badge-enhanced,
+    .quick-start-icon-pulse,
+    .quick-start-title-enhanced,
+    .quick-start-title-glow,
+    .quick-start-subtitle-enhanced,
+    .quick-start-border-animate,
+    .quick-start-particle-float {
+        animation: none !important;
+    }
+
+    .quick-start-card-enhanced:hover {
+        transform: none !important;
+    }
+
+    .quick-start-code-enhanced::before,
+    .quick-start-tip-enhanced::before {
         display: none !important;
     }
 }
