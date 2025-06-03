@@ -524,43 +524,34 @@ nav.nav-scrolled {
     overflow: hidden;
 }
 
-/* 浮动光球动画 */
+/* 浮动光球动画 - 优化版本，减少频闪 */
 .prerequisites-orb-float {
-    animation: prerequisitesOrbFloat 8s ease-in-out infinite;
+    animation: prerequisitesOrbFloat 12s ease-in-out infinite;
     will-change: transform;
 }
 
 @keyframes prerequisitesOrbFloat {
     0%, 100% {
         transform: translateY(0px) translateX(0px) scale(1);
-        opacity: 0.6;
-    }
-    25% {
-        transform: translateY(-20px) translateX(10px) scale(1.1);
-        opacity: 0.8;
+        opacity: 0.4;
     }
     50% {
-        transform: translateY(-10px) translateX(-5px) scale(0.9);
-        opacity: 1;
-    }
-    75% {
-        transform: translateY(-30px) translateX(15px) scale(1.05);
-        opacity: 0.7;
+        transform: translateY(-15px) translateX(5px) scale(1.05);
+        opacity: 0.6;
     }
 }
 
-/* 图案动画 */
+/* 图案动画 - 优化版本，减少旋转频率 */
 .prerequisites-pattern-animate {
-    animation: prerequisitesPatternRotate 20s linear infinite;
+    animation: prerequisitesPatternRotate 30s linear infinite;
 }
 
 @keyframes prerequisitesPatternRotate {
     0% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.05); }
     100% { transform: rotate(360deg) scale(1); }
 }
 
-/* 浮动粒子 */
+/* 浮动粒子 - 优化版本，减少粒子数量和动画复杂度 */
 .prerequisites-particles {
     position: absolute;
     top: 0;
@@ -572,33 +563,33 @@ nav.nav-scrolled {
 
 .prerequisites-particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(147, 51, 234, 0.6) 50%, transparent 100%);
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.5) 0%, rgba(147, 51, 234, 0.3) 50%, transparent 100%);
     border-radius: 50%;
-    animation: prerequisitesParticleFloat 12s linear infinite;
+    animation: prerequisitesParticleFloat 18s linear infinite;
 }
 
 @keyframes prerequisitesParticleFloat {
     0% {
-        transform: translateY(100vh) translateX(0) scale(0);
+        transform: translateY(100vh) scale(0);
         opacity: 0;
     }
-    10% {
-        opacity: 1;
-        transform: translateY(90vh) translateX(20px) scale(1);
+    20% {
+        opacity: 0.6;
+        transform: translateY(80vh) scale(1);
     }
-    90% {
-        opacity: 1;
-        transform: translateY(10vh) translateX(-20px) scale(1);
+    80% {
+        opacity: 0.6;
+        transform: translateY(20vh) scale(1);
     }
     100% {
-        transform: translateY(-10vh) translateX(0) scale(0);
+        transform: translateY(-10vh) scale(0);
         opacity: 0;
     }
 }
 
-/* 数据流线条 */
+/* 数据流线条 - 优化版本，减少流动频率 */
 .prerequisites-data-flow {
     position: absolute;
     top: 0;
@@ -610,27 +601,27 @@ nav.nav-scrolled {
 
 .prerequisites-flow-line {
     position: absolute;
-    width: 2px;
-    height: 150px;
+    width: 1px;
+    height: 120px;
     background: linear-gradient(to bottom,
         transparent 0%,
-        rgba(6, 182, 212, 0.6) 20%,
-        rgba(147, 51, 234, 0.8) 50%,
-        rgba(6, 182, 212, 0.6) 80%,
+        rgba(6, 182, 212, 0.4) 30%,
+        rgba(147, 51, 234, 0.5) 50%,
+        rgba(6, 182, 212, 0.4) 70%,
         transparent 100%);
-    animation: prerequisitesDataFlow 8s linear infinite;
+    animation: prerequisitesDataFlow 15s linear infinite;
 }
 
 @keyframes prerequisitesDataFlow {
     0% {
-        transform: translateY(-150px);
+        transform: translateY(-120px);
         opacity: 0;
     }
-    10%, 90% {
-        opacity: 1;
+    20%, 80% {
+        opacity: 0.8;
     }
     100% {
-        transform: translateY(calc(100vh + 150px));
+        transform: translateY(calc(100vh + 120px));
         opacity: 0;
     }
 }
@@ -645,45 +636,45 @@ nav.nav-scrolled {
         rgba(16, 185, 129, 0.1) 0%,
         rgba(34, 197, 94, 0.15) 50%,
         rgba(16, 185, 129, 0.1) 100%);
-    animation: prerequisitesBadgeGlow 3s ease-in-out infinite alternate;
+    animation: prerequisitesBadgeGlow 5s ease-in-out infinite alternate;
 }
 
 @keyframes prerequisitesBadgeGlow {
     0% {
-        box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
         transform: scale(1);
     }
     100% {
-        box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
-        transform: scale(1.02);
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        transform: scale(1.01);
     }
 }
 
 .prerequisites-title-enhanced {
-    animation: prerequisitesTitleFloat 4s ease-in-out infinite;
+    animation: prerequisitesTitleFloat 6s ease-in-out infinite;
 }
 
 @keyframes prerequisitesTitleFloat {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-3px); }
 }
 
 .prerequisites-title-glow {
     position: relative;
-    animation: prerequisitesTitleGlow 3s ease-in-out infinite alternate;
+    animation: prerequisitesTitleGlow 4s ease-in-out infinite alternate;
 }
 
 @keyframes prerequisitesTitleGlow {
-    0% { text-shadow: 0 0 10px rgba(6, 182, 212, 0.3); }
-    100% { text-shadow: 0 0 20px rgba(6, 182, 212, 0.6); }
+    0% { text-shadow: 0 0 8px rgba(6, 182, 212, 0.2); }
+    100% { text-shadow: 0 0 12px rgba(6, 182, 212, 0.4); }
 }
 
 .prerequisites-subtitle-enhanced {
-    animation: prerequisitesSubtitleFade 2s ease-in-out infinite alternate;
+    animation: prerequisitesSubtitleFade 3s ease-in-out infinite alternate;
 }
 
 @keyframes prerequisitesSubtitleFade {
-    0% { opacity: 0.8; }
+    0% { opacity: 0.85; }
     100% { opacity: 1; }
 }
 
@@ -708,10 +699,10 @@ nav.nav-scrolled {
         0 0 40px rgba(59, 130, 246, 0.3);
 }
 
-/* 边框动画 */
+/* 边框动画 - 优化版本，减少流动频率 */
 .prerequisites-border-animate {
     background-size: 300% 300%;
-    animation: prerequisitesBorderFlow 4s ease-in-out infinite;
+    animation: prerequisitesBorderFlow 8s ease-in-out infinite;
 }
 
 @keyframes prerequisitesBorderFlow {
@@ -719,26 +710,18 @@ nav.nav-scrolled {
     50% { background-position: 100% 50%; }
 }
 
-/* 粒子浮动动画 */
+/* 粒子浮动动画 - 优化版本，减少复杂度 */
 .prerequisites-particle-float {
-    animation: prerequisitesCardParticleFloat 6s ease-in-out infinite;
+    animation: prerequisitesCardParticleFloat 10s ease-in-out infinite;
 }
 
 @keyframes prerequisitesCardParticleFloat {
     0%, 100% {
-        transform: translateY(0px) translateX(0px) scale(1);
-        opacity: 0.6;
-    }
-    25% {
-        transform: translateY(-8px) translateX(4px) scale(1.2);
-        opacity: 0.8;
+        transform: translateY(0px) scale(1);
+        opacity: 0.4;
     }
     50% {
-        transform: translateY(-4px) translateX(-2px) scale(0.8);
-        opacity: 1;
-    }
-    75% {
-        transform: translateY(-12px) translateX(6px) scale(1.1);
+        transform: translateY(-6px) scale(1.1);
         opacity: 0.7;
     }
 }
@@ -3575,7 +3558,7 @@ img[loading="lazy"].loaded {
 
 .prerequisites-cta-bg-animate {
     background-size: 300% 300%;
-    animation: prerequisitesCtaBgFlow 8s ease-in-out infinite;
+    animation: prerequisitesCtaBgFlow 12s ease-in-out infinite;
 }
 
 @keyframes prerequisitesCtaBgFlow {
@@ -3584,36 +3567,36 @@ img[loading="lazy"].loaded {
 }
 
 .prerequisites-cta-float {
-    animation: prerequisitesCtaFloat 4s ease-in-out infinite;
+    animation: prerequisitesCtaFloat 8s ease-in-out infinite;
 }
 
 @keyframes prerequisitesCtaFloat {
     0%, 100% {
         transform: translateY(0px) scale(1);
-        opacity: 0.6;
+        opacity: 0.5;
     }
     50% {
-        transform: translateY(-10px) scale(1.1);
-        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+        opacity: 0.8;
     }
 }
 
 .prerequisites-cta-icon {
-    animation: prerequisitesCtaIconPulse 3s ease-in-out infinite;
+    animation: prerequisitesCtaIconPulse 5s ease-in-out infinite;
 }
 
 @keyframes prerequisitesCtaIconPulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.03); }
 }
 
 .prerequisites-cta-title {
-    animation: prerequisitesCtaTitleGlow 4s ease-in-out infinite alternate;
+    animation: prerequisitesCtaTitleGlow 6s ease-in-out infinite alternate;
 }
 
 @keyframes prerequisitesCtaTitleGlow {
-    0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
-    100% { text-shadow: 0 0 40px rgba(255, 255, 255, 0.6); }
+    0% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.2); }
+    100% { text-shadow: 0 0 25px rgba(255, 255, 255, 0.4); }
 }
 
 .prerequisites-cta-button-primary {
@@ -3659,18 +3642,25 @@ img[loading="lazy"].loaded {
 }
 
 .prerequisites-cta-stat {
-    animation: prerequisitesCtaStatPulse 2s ease-in-out infinite;
+    animation: prerequisitesCtaStatPulse 4s ease-in-out infinite;
 }
 
 @keyframes prerequisitesCtaStatPulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.02); }
 }
 
 /* ===== 响应式优化 ===== */
 @media (max-width: 768px) {
     .prerequisites-enhanced-bg {
+        background: linear-gradient(135deg,
+            #f8fafc 0%,
+            #e2e8f0 25%,
+            #cbd5e1 50%,
+            #e2e8f0 75%,
+            #f1f5f9 100%) !important;
         background-size: 150px 150px, 150px 150px, 30px 30px, 30px 30px;
+        min-height: 100vh;
     }
 
     .prerequisites-card-enhanced:hover {
