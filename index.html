@@ -365,11 +365,7 @@
               class="text-gray-600 hover:text-blue-600 transition-colors nav-link-hover"
               >准备工作</a
             >
-            <a
-              href="#quick-start"
-              class="text-gray-600 hover:text-blue-600 transition-colors nav-link-hover"
-              >快速开始</a
-            >
+
             <a
               href="#demo"
               class="text-gray-600 hover:text-blue-600 transition-colors nav-link-hover"
@@ -410,11 +406,7 @@
           class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600"
           >准备工作</a
         >
-        <a
-          href="#quick-start"
-          class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-          >快速开始</a
-        >
+
         <a
           href="#demo"
           class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600"
@@ -2142,7 +2134,10 @@
 <span class="text-cyan-400">python</span> <span class="text-yellow-400">--version</span>
 
 <span class="text-gray-500"># 安装uv (推荐)</span>
-<span class="text-cyan-400">curl</span> <span class="text-yellow-400">-LsSf</span> <span class="text-green-400">https://astral.sh/uv/install.sh</span> <span class="text-yellow-400">|</span> <span class="text-cyan-400">sh</span></code
+<span class="text-cyan-400">curl</span> <span class="text-yellow-400">-LsSf</span> <span class="text-green-400">https://astral.sh/uv/install.sh</span> <span class="text-yellow-400">|</span> <span class="text-cyan-400">sh</span>
+
+<span class="text-gray-500"># 或确保pip已安装</span>
+<span class="text-cyan-400">python</span> <span class="text-yellow-400">-m</span> <span class="text-purple-400">pip</span> <span class="text-yellow-400">--version</span></code
                 >
               </div>
             </div>
@@ -2260,63 +2255,46 @@
                 </div>
               </div>
 
-              <p class="text-gray-600 mb-6 text-base leading-relaxed">
-                您需要具备以下任一环境：
-              </p>
+              <!-- 第一步：安装 YOP MCP -->
+              <div class="mb-6">
+                <h4 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span class="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-3 text-white text-sm font-bold">1</span>
+                  安装 YOP MCP 工具
+                </h4>
+                <p class="text-gray-600 mb-4 text-base leading-relaxed">
+                  支持所有AI编程环境：
+                </p>
 
-              <!-- Enhanced list with better animations -->
-              <ul class="space-y-4 text-base mb-6">
-                <li class="flex items-start group/item prerequisites-list-item">
-                  <div
-                    class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50"
-                  >
-                    <i class="fas fa-check text-white text-xs"></i>
+                <!-- Enhanced code block -->
+                <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-slate-900 text-white rounded-xl p-4 shadow-2xl border border-gray-600/50 backdrop-blur-sm prerequisites-code-enhanced">
+                  <div class="flex items-center mb-2">
+                    <div class="flex space-x-1">
+                      <div class="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse"></div>
+                      <div class="w-2.5 h-2.5 bg-yellow-400 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                      <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                    </div>
+                    <span class="ml-auto text-gray-400 text-xs font-mono">Terminal</span>
+                    <button onclick="copyInstallCode(this)" class="ml-2 text-gray-400 hover:text-white text-xs hover:bg-gray-700 px-2 py-1 rounded">
+                      <i class="fas fa-copy mr-1"></i>复制
+                    </button>
                   </div>
-                  <span
-                    class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium"
-                    >支持工具调用的IDE (如Cursor)</span
-                  >
-                </li>
-                <li class="flex items-start group/item prerequisites-list-item">
-                  <div
-                    class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50"
-                  >
-                    <i class="fas fa-check text-white text-xs"></i>
-                  </div>
-                  <span
-                    class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium"
-                    >AI编程工具 (如Cline, RooCode)</span
-                  >
-                </li>
-                <li class="flex items-start group/item prerequisites-list-item">
-                  <div
-                    class="w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 shadow-lg transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-emerald-400/50"
-                  >
-                    <i class="fas fa-check text-white text-xs"></i>
-                  </div>
-                  <span
-                    class="group-hover/item:text-gray-800 transition-colors duration-300 font-medium"
-                    >通过API调用的LLM (如Claude)</span
-                  >
-                </li>
-              </ul>
+                  <code class="unified-code-block block whitespace-pre-wrap"><span class="text-gray-500"># 推荐使用 uv</span>
+<span class="text-cyan-400">uv</span> <span class="text-yellow-400">pip</span> <span class="text-purple-400">install</span> <span class="text-green-400">yop-mcp</span>
 
-              <!-- Enhanced tip box with link to quick start -->
-              <div
-                class="p-4 bg-gradient-to-r from-purple-50 via-purple-100 to-blue-50 rounded-xl border border-purple-200/50 shadow-lg backdrop-blur-sm prerequisites-tip-enhanced mb-4"
-              >
-                <div class="flex items-start">
-                  <div
-                    class="w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3 shadow-lg"
-                  >
-                    <i class="fas fa-lightbulb text-white text-xs"></i>
-                  </div>
-                  <p
-                    class="text-purple-800 text-sm font-medium leading-relaxed"
-                  >
-                    推荐使用支持MCP协议的AI开发工具
-                  </p>
+<span class="text-gray-500"># 或使用 pip</span>
+<span class="text-cyan-400">pip</span> <span class="text-purple-400">install</span> <span class="text-green-400">yop-mcp</span></code>
                 </div>
+              </div>
+
+              <!-- 第二步：选择AI编程工具 -->
+              <div class="mb-6">
+                <h4 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span class="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3 text-white text-sm font-bold">2</span>
+                  选择AI编程工具
+                </h4>
+                <p class="text-gray-600 mb-4 text-base leading-relaxed">
+                  选择任一支持MCP协议的AI编程工具：
+                </p>
               </div>
 
               <!-- Quick start modal button -->
@@ -2492,7 +2470,7 @@
 
               <!-- Enhanced tip box -->
               <div
-                class="p-4 bg-gradient-to-r from-blue-50 via-cyan-100 to-teal-50 rounded-xl border border-blue-200/50 shadow-lg backdrop-blur-sm prerequisites-tip-enhanced"
+                class="p-4 bg-gradient-to-r from-blue-50 via-cyan-100 to-teal-50 rounded-xl border border-blue-200/50 shadow-lg backdrop-blur-sm prerequisites-tip-enhanced mb-4"
               >
                 <div class="flex items-start">
                   <div
@@ -2504,6 +2482,19 @@
                     沙箱环境提供模拟数据，方便开发测试
                   </p>
                 </div>
+              </div>
+
+              <!-- YOP开放平台链接 -->
+              <div class="text-center">
+                <a
+                  href="https://open.yeepay.com/"
+                  target="_blank"
+                  class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-500 text-white font-medium rounded-xl hover:from-emerald-600 hover:to-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
+                >
+                  <i class="fas fa-external-link-alt mr-2"></i>
+                  前往YOP开放平台
+                </a>
+                <p class="text-gray-500 text-xs mt-2">创建应用并获取商户信息和密钥对</p>
               </div>
             </div>
           </div>
@@ -2629,550 +2620,23 @@
       </div>
     </section>
 
-    <!-- Quick Start Section -->
-    <section class="py-20 gradient-bg hero-pattern" id="quick-start">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 fade-in-up">
-          <div
-            class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-100 via-blue-100 to-purple-100 text-sm font-bold mb-8 shadow-lg border border-cyan-200/50"
-          >
-            <i class="fas fa-rocket mr-3 text-cyan-600"></i>
-            <span
-              class="bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent"
-              >快速开始</span
-            >
-          </div>
-
-          <h2
-            class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
-          >
-            <span
-              class="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent"
-            >
-              只需两步，激活您的 AI 集成超能力！
-            </span>
-          </h2>
-          <p
-            class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
-          >
-            按照以下步骤快速安装和配置 YOP MCP，开启您的
-            <span class="text-cyan-300 font-semibold">智能集成之旅</span>，
-            仅需
-            <span class="text-purple-300 font-semibold">5 分钟</span>。
-          </p>
-        </div>
-        <div class="grid lg:grid-cols-2 gap-12 quick-start-cards-container">
-          <!-- Step 1 -->
-          <div
-            class="group fade-in-up quick-start-card-enhanced"
-            data-delay="0"
-          >
-            <!-- Enhanced glassmorphism background -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/85 backdrop-blur-xl rounded-3xl"
-            ></div>
-
-            <!-- Animated border gradient -->
-            <div
-              class="absolute inset-0 rounded-3xl bg-gradient-to-r from-green-500/20 via-blue-500/20 to-purple-500/20 p-[3px] quick-start-border-animate"
-            >
-              <div class="w-full h-full bg-white/10 rounded-3xl"></div>
-            </div>
-
-            <!-- Enhanced background pattern -->
-            <div class="absolute inset-0 opacity-10">
-              <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern
-                    id="step1PatternEnhanced"
-                    x="0"
-                    y="0"
-                    width="50"
-                    height="50"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <path
-                      d="M25,8 L42,25 L25,42 L8,25 Z"
-                      fill="none"
-                      stroke="url(#step1Gradient)"
-                      stroke-width="1.5"
-                      opacity="0.6"
-                    />
-                    <circle
-                      cx="25"
-                      cy="25"
-                      r="10"
-                      fill="none"
-                      stroke="url(#step1Gradient)"
-                      stroke-width="1"
-                      opacity="0.4"
-                    />
-                    <circle
-                      cx="25"
-                      cy="25"
-                      r="3"
-                      fill="url(#step1Gradient)"
-                      opacity="0.5"
-                    />
-                  </pattern>
-                  <linearGradient
-                    id="step1Gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: rgb(34, 197, 94); stop-opacity: 0.8"
-                    />
-                    <stop
-                      offset="50%"
-                      style="stop-color: rgb(59, 130, 246); stop-opacity: 0.6"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: rgb(147, 51, 234); stop-opacity: 0.8"
-                    />
-                  </linearGradient>
-                </defs>
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="url(#step1PatternEnhanced)"
-                />
-              </svg>
-            </div>
-
-            <!-- Floating particles - 优化版本，减少粒子数量 -->
-            <div class="absolute inset-0 overflow-hidden pointer-events-none">
-              <div
-                class="absolute top-8 right-8 w-3 h-3 bg-green-400 rounded-full animate-pulse opacity-40 quick-start-particle-float"
-              ></div>
-            </div>
-
-            <div class="relative z-10 p-10 h-full flex flex-col">
-              <!-- Enhanced header with 3D icon -->
-              <div class="flex items-center mb-8 quick-start-header-3d">
-                <div
-                  class="w-20 h-20 bg-gradient-to-br from-green-500 via-blue-600 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl border border-green-300/30 group-hover:shadow-green-500/50 transition-all duration-500 quick-start-icon-3d"
-                >
-                  <span
-                    class="text-white text-3xl font-bold transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 drop-shadow-lg"
-                    >1</span
-                  >
-                </div>
-                <div class="ml-6">
-                  <h3
-                    class="text-3xl font-bold text-gray-900 group-hover:text-green-700 transition-colors duration-300 quick-start-title-3d"
-                  >
-                    安装 YOP MCP 工具
-                  </h3>
-                  <div
-                    class="w-16 h-1.5 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mt-2 group-hover:w-20 transition-all duration-300"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="mb-8">
-                <p
-                  class="text-gray-900 text-lg leading-relaxed mb-4 font-medium"
-                >
-                  在您的本地开发环境安装
-                  <code
-                    class="unified-inline-code"
-                    >yop-mcp</code
-                  >
-                  命令行工具
-                </p>
-                <div
-                  class="flex items-center space-x-2 text-sm text-gray-800 font-medium"
-                >
-                  <i class="fas fa-clock text-green-600"></i>
-                  <span>预计用时：2 分钟</span>
-                  <span class="text-gray-600">|</span>
-                  <i class="fas fa-python text-blue-600"></i>
-                  <span>需要 Python 3.8+</span>
-                </div>
-              </div>
-
-              <!-- Enhanced code block -->
-              <div
-                class="bg-gradient-to-br from-gray-900 via-gray-800 to-slate-900 text-white rounded-2xl p-6 shadow-2xl border border-gray-600/50 backdrop-blur-sm quick-start-code-enhanced flex-grow relative overflow-hidden"
-                style="min-height: 320px"
-              >
-                <!-- Code header -->
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex space-x-2">
-                    <div
-                      class="w-3 h-3 bg-red-500 rounded-full animate-pulse"
-                    ></div>
-                    <div
-                      class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"
-                      style="animation-delay: 0.2s"
-                    ></div>
-                    <div
-                      class="w-3 h-3 bg-green-500 rounded-full animate-pulse"
-                      style="animation-delay: 0.4s"
-                    ></div>
-                  </div>
-                  <div class="flex items-center space-x-3">
-                    <span class="text-gray-400 text-sm font-mono"
-                      >Terminal</span
-                    >
-                    <button
-                      class="copy-code-btn text-gray-400 hover:text-white transition-colors p-1 rounded"
-                      title="复制代码"
-                    >
-                      <i class="fas fa-copy text-sm"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Code content -->
-                <div class="space-y-3">
-                  <div class="code-line">
-                    <span class="text-gray-500 text-sm"
-                      ># 方式一：使用 uv (推荐)</span
-                    >
-                  </div>
-                  <div class="code-line">
-                    <span class="text-cyan-400">uv</span>
-                    <span class="text-yellow-400">pip</span>
-                    <span class="text-purple-400">install</span>
-                    <span class="text-green-400">yop-mcp</span>
-                  </div>
-
-                  <div class="my-4 border-t border-gray-600"></div>
-
-                  <div class="code-line">
-                    <span class="text-gray-500 text-sm"
-                      ># 方式二：使用 pip</span
-                    >
-                  </div>
-                  <div class="code-line">
-                    <span class="text-cyan-400">pip</span>
-                    <span class="text-purple-400">install</span>
-                    <span class="text-green-400">yop-mcp</span>
-                  </div>
-
-                  <div class="my-4 border-t border-gray-600"></div>
-
-                  <div class="code-line">
-                    <span class="text-gray-500 text-sm"># 验证安装</span>
-                  </div>
-                  <div class="code-line">
-                    <span class="text-cyan-400">yop-mcp</span>
-                    <span class="text-yellow-400">--version</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Enhanced tip box -->
-              <div
-                class="mt-6 p-5 bg-gray-50 rounded-2xl border border-gray-200 shadow-lg backdrop-blur-sm quick-start-tip-enhanced relative overflow-hidden"
-              >
-                <div class="flex items-start">
-                  <div
-                    class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0"
-                  >
-                    <i class="fas fa-lightbulb text-white text-sm"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-blue-900 font-bold mb-2">💡 安装提示</h4>
-                    <p
-                      class="text-blue-800 text-sm leading-relaxed font-medium"
-                    >
-                      推荐使用
-                      <code
-                        class="unified-inline-code"
-                        >uv</code
-                      >
-                      进行安装，速度更快。 如果遇到权限问题，可以添加
-                      <code
-                        class="unified-inline-code"
-                        >--user</code
-                      >
-                      参数。
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div
-            class="group fade-in-up quick-start-card-enhanced"
-            data-delay="1"
-          >
-            <!-- Enhanced glassmorphism background -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/85 backdrop-blur-xl rounded-3xl"
-            ></div>
-
-            <!-- Animated border gradient -->
-            <div
-              class="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20 p-[3px] quick-start-border-animate"
-            >
-              <div class="w-full h-full bg-white/10 rounded-3xl"></div>
-            </div>
-
-            <!-- Enhanced background pattern -->
-            <div class="absolute inset-0 opacity-10">
-              <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern
-                    id="step2PatternEnhanced"
-                    x="0"
-                    y="0"
-                    width="45"
-                    height="45"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <circle
-                      cx="22.5"
-                      cy="22.5"
-                      r="12"
-                      fill="none"
-                      stroke="url(#step2Gradient)"
-                      stroke-width="1.5"
-                      opacity="0.6"
-                    />
-                    <circle
-                      cx="22.5"
-                      cy="22.5"
-                      r="6"
-                      fill="none"
-                      stroke="url(#step2Gradient)"
-                      stroke-width="1"
-                      opacity="0.4"
-                    />
-                    <circle
-                      cx="22.5"
-                      cy="22.5"
-                      r="3"
-                      fill="url(#step2Gradient)"
-                      opacity="0.5"
-                    />
-                    <path
-                      d="M11,11 L34,34 M34,11 L11,34"
-                      stroke="url(#step2Gradient)"
-                      stroke-width="0.8"
-                      opacity="0.3"
-                    />
-                  </pattern>
-                  <linearGradient
-                    id="step2Gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: rgb(147, 51, 234); stop-opacity: 0.8"
-                    />
-                    <stop
-                      offset="50%"
-                      style="stop-color: rgb(236, 72, 153); stop-opacity: 0.6"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: rgb(239, 68, 68); stop-opacity: 0.8"
-                    />
-                  </linearGradient>
-                </defs>
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="url(#step2PatternEnhanced)"
-                />
-              </svg>
-            </div>
-
-            <!-- Floating particles - 优化版本，减少粒子数量 -->
-            <div class="absolute inset-0 overflow-hidden pointer-events-none">
-              <div
-                class="absolute top-8 right-8 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-40 quick-start-particle-float"
-              ></div>
-            </div>
-
-            <div class="relative z-10 p-10 h-full flex flex-col">
-              <!-- Enhanced header with 3D icon -->
-              <div class="flex items-center mb-8 quick-start-header-3d">
-                <div
-                  class="w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-600 to-red-600 rounded-3xl flex items-center justify-center shadow-2xl border border-purple-300/30 group-hover:shadow-purple-500/50 transition-all duration-500 quick-start-icon-3d"
-                >
-                  <span
-                    class="text-white text-3xl font-bold transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 drop-shadow-lg"
-                    >2</span
-                  >
-                </div>
-                <div class="ml-6">
-                  <h3
-                    class="text-3xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors duration-300 quick-start-title-3d"
-                  >
-                    配置 AI 工具
-                  </h3>
-                  <div
-                    class="w-16 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 group-hover:w-20 transition-all duration-300"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="mb-8">
-                <p
-                  class="text-gray-900 text-lg leading-relaxed mb-4 font-medium"
-                >
-                  在您的 IDE 或 AI 编程工具中添加
-                  <code
-                    class="unified-inline-code"
-                    >MCP 服务器</code
-                  >
-                  配置
-                </p>
-                <div
-                  class="flex items-center space-x-2 text-sm text-gray-800 font-medium"
-                >
-                  <i class="fas fa-clock text-purple-600"></i>
-                  <span>预计用时：3 分钟</span>
-                  <span class="text-gray-600">|</span>
-                  <i class="fas fa-cog text-blue-600"></i>
-                  <span>支持 Cursor、Claude 等</span>
-                </div>
-              </div>
-
-              <!-- Enhanced code block -->
-              <div
-                class="bg-gradient-to-br from-gray-900 via-gray-800 to-slate-900 text-white rounded-2xl p-6 shadow-2xl border border-gray-600/50 backdrop-blur-sm quick-start-code-enhanced flex-grow relative overflow-hidden"
-                style="min-height: 320px"
-              >
-                <!-- Code header -->
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex space-x-2">
-                    <div
-                      class="w-3 h-3 bg-red-500 rounded-full animate-pulse"
-                    ></div>
-                    <div
-                      class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"
-                      style="animation-delay: 0.2s"
-                    ></div>
-                    <div
-                      class="w-3 h-3 bg-green-500 rounded-full animate-pulse"
-                      style="animation-delay: 0.4s"
-                    ></div>
-                  </div>
-                  <div class="flex items-center space-x-3">
-                    <span class="text-gray-400 text-sm font-mono"
-                      >mcp_config.json</span
-                    >
-                    <button
-                      class="copy-code-btn text-gray-400 hover:text-white transition-colors p-1 rounded"
-                      title="复制配置"
-                    >
-                      <i class="fas fa-copy text-sm"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Code content -->
-                <div class="space-y-1 font-mono text-sm leading-relaxed">
-                  <div class="text-gray-300">{</div>
-                  <div class="ml-4">
-                    <span class="text-sky-400">"mcpServers"</span
-                    ><span class="text-gray-300">: {</span>
-                  </div>
-                  <div class="ml-8">
-                    <span class="text-sky-400">"yop-mcp"</span
-                    ><span class="text-gray-300">: {</span>
-                    <span class="text-gray-500 ml-2"
-                      >// 服务名称，可自定义</span
-                    >
-                  </div>
-                  <div class="ml-12">
-                    <span class="text-sky-400">"command"</span
-                    ><span class="text-gray-300">:</span>
-                    <span class="text-yellow-400">"uv"</span
-                    ><span class="text-gray-300">,</span>
-                  </div>
-                  <div class="ml-12">
-                    <span class="text-sky-400">"args"</span
-                    ><span class="text-gray-300">: [</span>
-                    <span class="text-yellow-400">"yop-mcp"</span>
-                    <span class="text-gray-300">]</span>
-                  </div>
-                  <div class="ml-8 text-gray-300">}</div>
-                  <div class="ml-4 text-gray-300">}</div>
-                  <div class="text-gray-300">}</div>
-                </div>
-
-                <!-- Alternative configurations -->
-                <div class="mt-6 pt-4 border-t border-gray-600">
-                  <div class="text-gray-400 text-xs mb-3">
-                    💡 其他配置方式：
-                  </div>
-                  <div class="space-y-2 text-xs">
-                    <div class="text-gray-500">// 使用 pip 安装的情况</div>
-                    <div class="text-gray-400">
-                      <span class="text-sky-400">"command"</span>:
-                      <span class="text-yellow-400">"yop-mcp"</span>
-                    </div>
-                    <div class="text-gray-500 mt-2">// 指定完整路径</div>
-                    <div class="text-gray-400">
-                      <span class="text-sky-400">"command"</span>:
-                      <span class="text-yellow-400">"/path/to/yop-mcp"</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Enhanced tip box -->
-              <div
-                class="mt-6 p-5 bg-gray-50 rounded-2xl border border-gray-200 shadow-lg backdrop-blur-sm quick-start-tip-enhanced relative overflow-hidden"
-              >
-                <div class="flex items-start">
-                  <div
-                    class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0"
-                  >
-                    <i class="fas fa-magic text-white text-sm"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-purple-900 font-bold mb-2">🔧 配置说明</h4>
-                    <p
-                      class="text-purple-800 text-sm leading-relaxed mb-3 font-medium"
-                    >
-                      配置文件位置因工具而异：
-                    </p>
-                    <ul class="text-purple-800 text-sm space-y-1 font-medium">
-                      <li>
-                        • <strong class="text-purple-900">Cursor</strong>: 设置
-                        → MCP 服务器
-                      </li>
-                      <li>
-                        •
-                        <strong class="text-purple-900">Claude Desktop</strong>:
-                        ~/.claude/claude_desktop_config.json
-                      </li>
-                      <li>
-                        • <strong class="text-purple-900">其他工具</strong>:
-                        参考相应文档
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
-      </div>
-    </section>
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Demo Video Section -->
     <section
-      class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden"
+      class="py-20 gradient-bg hero-pattern relative overflow-hidden"
       id="demo"
     >
       <!-- Background decorative elements -->
@@ -3235,13 +2699,13 @@
               >
             </div>
             <h2
-              class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight"
+              class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight"
             >
               观看 YOP MCP 实战演示
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               通过真实案例，了解如何使用 YOP MCP 快速完成支付集成，体验
-              <span class="text-red-600 font-semibold">AI 驱动的开发流程</span>
+              <span class="text-red-400 font-semibold">AI 驱动的开发流程</span>
             </p>
           </div>
 
@@ -3370,23 +2834,7 @@
               </div>
             </div>
 
-            <!-- Video stats -->
-            <div class="mt-8 grid grid-cols-3 gap-6 text-center">
-              <div class="fade-in-up" data-delay="2">
-                <div class="text-2xl font-bold text-blue-600 mb-1">10,000+</div>
-                <div class="text-sm text-gray-600">观看次数</div>
-              </div>
-              <div class="fade-in-up" data-delay="3">
-                <div class="text-2xl font-bold text-green-600 mb-1">98%</div>
-                <div class="text-sm text-gray-600">好评率</div>
-              </div>
-              <div class="fade-in-up" data-delay="4">
-                <div class="text-2xl font-bold text-purple-600 mb-1">
-                  5,000+
-                </div>
-                <div class="text-sm text-gray-600">开发者使用</div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -4469,16 +3917,30 @@
       function getToolIcon(toolName) {
         const icons = {
           'claude-desktop': 'desktop',
-          'cursor': 'cube',
-          'cline': 'terminal',
-          'roocode': 'code',
+          'cursor': 'mouse-pointer',
+          'cline': 'robot',
+          'roocode': 'paw',
           'trea': 'tree',
           'kilocode': 'rocket',
           'gemini-cli': 'terminal',
-          'augment': 'magic',
-          'windsurf': 'wind'
+          'augment': 'robot',
+          'windsurf': 'wind',
+          'claude-cli': 'terminal'
         };
         return icons[toolName] || 'cog';
+      }
+
+      // JSON语法高亮
+      function highlightJSON(code) {
+        if (!code) return '';
+
+        return code
+          .replace(/(".*?")\s*:/g, '<span style="color: #22d3ee;">$1</span>:') // 键名 - cyan
+          .replace(/:\s*(".*?")/g, ': <span style="color: #a3e635;">$1</span>') // 字符串值 - green
+          .replace(/:\s*(true|false|null)/g, ': <span style="color: #f59e0b;">$1</span>') // 布尔值和null - amber
+          .replace(/:\s*(\d+)/g, ': <span style="color: #ec4899;">$1</span>') // 数字 - pink
+          .replace(/([{}[\]])/g, '<span style="color: #8b5cf6;">$1</span>') // 括号 - purple
+          .replace(/(,)/g, '<span style="color: #6b7280;">$1</span>'); // 逗号 - gray
       }
 
       // 切换配置详情显示
@@ -4502,8 +3964,8 @@
             code: `{
   "mcpServers": {
     "yop-mcp": {
-      "command": "python",
-      "args": ["-m", "yop_mcp"],
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
       "env": {
         "YOP_MERCHANT_NO": "your_merchant_no",
         "YOP_APP_KEY": "your_app_key"
@@ -4523,12 +3985,20 @@
             steps: [
               '下载并安装Cursor编辑器',
               '使用快捷键 Cmd+, (Mac) 或 Ctrl+, (Windows) 打开设置',
-              '在设置中配置AI模型：'
+              '在设置中找到"MCP服务器"配置',
+              '添加YOP MCP服务器配置'
             ],
             code: `{
-  "cursor.openai.apiKey": "your-yop-mcp-api-key",
-  "cursor.openai.baseUrl": "http://localhost:8000/v1",
-  "cursor.openai.model": "yop-mcp-model"
+  "mcpServers": {
+    "yop-mcp": {
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
+      "env": {
+        "YOP_MERCHANT_NO": "your_merchant_no",
+        "YOP_APP_KEY": "your_app_key"
+      }
+    }
+  }
 }`,
             note: '使用 Cmd+K 打开AI聊天，测试YOP MCP功能'
           },
@@ -4547,8 +4017,8 @@
             code: `{
   "mcpServers": {
     "yop-mcp": {
-      "command": "python",
-      "args": ["-m", "yop_mcp"],
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
       "env": {
         "YOP_MERCHANT_NO": "your_merchant_no",
         "YOP_APP_KEY": "your_app_key"
@@ -4572,8 +4042,8 @@
             ],
             code: `{
   "name": "yop-mcp",
-  "command": "python",
-  "args": ["-m", "yop_mcp"],
+  "command": "uv",
+  "args": ["run", "yop-mcp"],
   "env": {
     "YOP_MERCHANT_NO": "your_merchant_no",
     "YOP_APP_KEY": "your_app_key"
@@ -4595,7 +4065,18 @@
               '添加YOP MCP服务器配置',
               '测试连接是否成功'
             ],
-            code: null,
+            code: `{
+  "mcpServers": {
+    "yop-mcp": {
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
+      "env": {
+        "YOP_MERCHANT_NO": "your_merchant_no",
+        "YOP_APP_KEY": "your_app_key"
+      }
+    }
+  }
+}`,
             note: '具体配置方式请参考Trea官方文档'
           },
           'kilocode': {
@@ -4611,7 +4092,18 @@
               '添加YOP MCP服务器配置',
               '测试连接是否成功'
             ],
-            code: null,
+            code: `{
+  "mcpServers": {
+    "yop-mcp": {
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
+      "env": {
+        "YOP_MERCHANT_NO": "your_merchant_no",
+        "YOP_APP_KEY": "your_app_key"
+      }
+    }
+  }
+}`,
             note: '具体配置方式请参考KiloCode官方文档'
           },
           'gemini-cli': {
@@ -4627,7 +4119,18 @@
               '在配置中添加YOP MCP工具',
               '使用命令行测试连接'
             ],
-            code: null,
+            code: `{
+  "mcpServers": {
+    "yop-mcp": {
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
+      "env": {
+        "YOP_MERCHANT_NO": "your_merchant_no",
+        "YOP_APP_KEY": "your_app_key"
+      }
+    }
+  }
+}`,
             note: '支持强大的免费使用额度'
           },
           'augment': {
@@ -4643,7 +4146,18 @@
               '添加YOP MCP服务器配置',
               '测试连接是否成功'
             ],
-            code: null,
+            code: `{
+  "mcpServers": {
+    "yop-mcp": {
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
+      "env": {
+        "YOP_MERCHANT_NO": "your_merchant_no",
+        "YOP_APP_KEY": "your_app_key"
+      }
+    }
+  }
+}`,
             note: '提供强大的AI编程能力和代码优化功能'
           },
           'windsurf': {
@@ -4659,8 +4173,19 @@
               '添加YOP MCP服务器配置',
               '测试连接是否成功'
             ],
-            code: null,
-            note: '基于Codeium技术的强大AI编程工具'
+            code: `{
+  "mcpServers": {
+    "yop-mcp": {
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
+      "env": {
+        "YOP_MERCHANT_NO": "your_merchant_no",
+        "YOP_APP_KEY": "your_app_key"
+      }
+    }
+  }
+}`,
+            note: '支持智能代码生成和AI辅助编程'
           },
           'claude-cli': {
             title: 'Claude CLI',
@@ -4675,7 +4200,18 @@
               '在配置中添加YOP MCP工具',
               '使用命令行测试连接'
             ],
-            code: null,
+            code: `{
+  "mcpServers": {
+    "yop-mcp": {
+      "command": "uv",
+      "args": ["run", "yop-mcp"],
+      "env": {
+        "YOP_MERCHANT_NO": "your_merchant_no",
+        "YOP_APP_KEY": "your_app_key"
+      }
+    }
+  }
+}`,
             note: '官方CLI工具，原生支持MCP协议'
           }
         };
@@ -4697,24 +4233,20 @@
               <div class="w-12 h-12 bg-${config.color}-100 rounded-lg flex items-center justify-center mr-4">
                 <i class="fas fa-${getToolIcon(toolName)} text-${config.color}-600 text-xl"></i>
               </div>
-              <div class="flex items-center gap-4">
-                <div>
-                  <h3 class="text-2xl font-bold text-gray-900">${config.title}</h3>
-                  <p class="text-gray-500">${config.subtitle}</p>
-                </div>
-                <a href="${config.downloadUrl}" target="_blank" class="inline-flex items-center px-4 py-2 bg-${config.color}-600 text-white rounded-lg hover:bg-${config.color}-700 transition-colors">
-                  <i class="fas fa-download mr-2"></i>
-                  ${config.downloadText}
-                </a>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900">${config.title}</h3>
+                <p class="text-gray-500">${config.subtitle} - ${config.description}</p>
               </div>
             </div>
-            <button onclick="toggleConfig('${toolName}')" class="text-gray-400 hover:text-gray-600 p-2">
-              <i class="fas fa-times text-xl"></i>
-            </button>
-          </div>
-
-          <div class="mb-6 p-4 bg-${config.color}-50 rounded-lg border border-${config.color}-200">
-            <p class="text-${config.color}-800">${config.description}</p>
+            <div class="flex items-center gap-3">
+              <a href="${config.downloadUrl}" target="_blank" class="inline-flex items-center px-4 py-2 bg-${config.color}-600 text-white rounded-lg hover:bg-${config.color}-700 transition-colors">
+                <i class="fas fa-download mr-2"></i>
+                ${config.downloadText}
+              </a>
+              <button onclick="toggleConfig('${toolName}')" class="text-gray-400 hover:text-gray-600 p-2">
+                <i class="fas fa-times text-xl"></i>
+              </button>
+            </div>
           </div>
 
           <div class="grid md:grid-cols-2 gap-6">
@@ -4738,37 +4270,23 @@
             </div>
         `;
 
-        if (config.code) {
-          html += `
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
-                <i class="fas fa-code text-${config.color}-600 mr-2"></i>
-                配置文件示例
-              </h4>
-              <div class="bg-gray-900 rounded-lg p-4 text-white font-mono text-sm">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-400 text-xs">配置文件</span>
-                  <button onclick="copyConfigCode(this)" class="text-gray-400 hover:text-white text-xs hover:bg-gray-700 px-2 py-1 rounded">
-                    <i class="fas fa-copy mr-1"></i>复制
-                  </button>
-                </div>
-                <pre class="whitespace-pre-wrap">${config.code}</pre>
+        html += `
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+              <i class="fas fa-code text-${config.color}-600 mr-2"></i>
+              配置文件示例
+            </h4>
+            <div class="bg-gray-900 rounded-lg p-4 text-white font-mono text-sm">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-gray-400 text-xs">配置文件</span>
+                <button onclick="copyConfigCode(this)" class="text-gray-400 hover:text-white text-xs hover:bg-gray-700 px-2 py-1 rounded">
+                  <i class="fas fa-copy mr-1"></i>复制
+                </button>
               </div>
+              <pre class="whitespace-pre-wrap"><code class="language-json">${highlightJSON(config.code)}</code></pre>
             </div>
-          `;
-        } else {
-          html += `
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
-                <i class="fas fa-info-circle text-${config.color}-600 mr-2"></i>
-                配置说明
-              </h4>
-              <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <p class="text-gray-600 text-sm">请参考官方文档进行详细配置</p>
-              </div>
-            </div>
-          `;
-        }
+          </div>
+        `;
 
         html += `</div>`;
 
@@ -4784,6 +4302,23 @@
       function copyConfigCode(button) {
         const codeBlock = button.closest('.bg-gray-900').querySelector('pre');
         const text = codeBlock.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+          const originalHTML = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check mr-1"></i>已复制';
+          setTimeout(() => {
+            button.innerHTML = originalHTML;
+          }, 2000);
+        });
+      }
+
+      // 复制安装代码
+      function copyInstallCode(button) {
+        const text = `# 推荐使用 uv
+uv pip install yop-mcp
+
+# 或使用 pip
+pip install yop-mcp`;
 
         navigator.clipboard.writeText(text).then(() => {
           const originalHTML = button.innerHTML;
