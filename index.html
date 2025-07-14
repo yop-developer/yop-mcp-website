@@ -505,7 +505,7 @@
               </a>
               <a
                 href="#how-it-works"
-                class="modern-button inline-flex items-center justify-center px-8 py-3.5 text-base font-medium rounded-lg text-white bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 hover:from-slate-500 hover:via-slate-600 hover:to-slate-700 border-2 border-slate-400/50 hover:border-slate-300/70 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-lg hover:shadow-xl"
+                class="modern-button inline-flex items-center justify-center px-8 py-3.5 text-base font-medium rounded-2xl text-white bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 hover:from-slate-500 hover:via-slate-600 hover:to-slate-700 border-4 border-slate-400/50 hover:border-slate-300/70 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-lg hover:shadow-xl"
                 aria-label="了解YOP MCP工作原理"
               >
                 <i class="fas fa-cogs mr-2 text-lg"></i>
@@ -714,7 +714,7 @@
 
     <!-- Features Section -->
     <section
-      class="py-20 section-bg-pattern relative overflow-hidden"
+      class="py-20 pb-32 section-bg-pattern relative overflow-hidden"
       id="features"
     >
       <!-- Background decorative elements -->
@@ -748,17 +748,9 @@
           </h2>
           <div class="max-w-4xl mx-auto space-y-4">
             <p class="text-xl text-gray-600 leading-relaxed">
-              YOP MCP (模型上下文协议)
-              是易宝支付为开发者精心打造的创新技术与工具集。
-            </p>
-            <p class="text-xl text-gray-600 leading-relaxed">
-              它允许您通过最喜爱的大型语言模型——无论集成在IDE、AI编程工具中，还是通过API调用的模型——
-              <span class="text-blue-600 font-semibold"
-                >以自然语言对话的方式</span
-              >，直接与易宝支付开放平台的海量API进行交互和集成。
-            </p>
-            <p class="text-lg text-gray-500 mt-6">
-              通过YOP MCP，AI将成为您最得力的支付集成助手，化繁为简，提效增速。
+              YOP MCP 让您通过
+              <span class="text-blue-600 font-semibold">自然语言对话</span>
+              直接与易宝支付API交互，AI助手化繁为简。
             </p>
           </div>
         </div>
@@ -849,10 +841,10 @@
                 极速高效
               </h3>
               <p class="text-gray-200 mb-4 text-sm leading-relaxed">
-                从需求分析到代码生成，AI全程加速，将数天工作缩短至<span
+                AI全程加速，将数天工作缩短至<span
                   class="text-cyan-300 font-bold bg-cyan-900/30 px-1 rounded"
-                  >小时乃至分钟级</span
-                >。 告别传统繁琐的开发流程，体验前所未有的集成速度。
+                  >分钟级</span
+                >，体验前所未有的集成速度。
               </p>
               <div class="space-y-2 text-sm">
                 <div
@@ -992,11 +984,10 @@
                 简单易用
               </h3>
               <p class="text-gray-200 mb-4 text-sm leading-relaxed">
-                告别繁复文档，用<span
+                用<span
                   class="text-emerald-300 font-bold bg-emerald-900/30 px-1 rounded"
                   >自然语言</span
-                >驱动复杂API对接，无需记忆SDK细节。
-                用您最熟悉的方式与AI对话，轻松完成支付集成任务。
+                >驱动API对接，无需记忆SDK细节。
               </p>
               <div class="space-y-2 text-sm">
                 <div
@@ -1142,11 +1133,10 @@
                 智能强大
               </h3>
               <p class="text-gray-200 mb-4 text-sm leading-relaxed">
-                AI深度理解意图，结合<span
+                结合<span
                   class="text-purple-300 font-bold bg-purple-900/30 px-1 rounded"
                   >实时YOP文档</span
-                >与最佳实践，提供精准方案与高质量代码。
-                智能分析业务场景，自动选择最适合的API和集成方案。
+                >，智能分析业务场景，提供精准方案。
               </p>
               <div class="space-y-2 text-sm">
                 <div
@@ -1294,11 +1284,10 @@
                 安全可控
               </h3>
               <p class="text-gray-200 mb-4 text-sm leading-relaxed">
-                核心工具<span
+                <span
                   class="text-red-300 font-bold bg-red-900/30 px-1 rounded"
                   >本地执行</span
-                >，敏感信息本地生成存储，标准I/O交互增强控制性。
-                确保您的数据安全，密钥信息永不离开本地环境。
+                >，敏感信息本地存储，密钥永不离开本地环境。
               </p>
               <div class="space-y-2 text-sm">
                 <div
@@ -1711,83 +1700,7 @@
 
             <!-- 技术机制详解 -->
             <div class="mt-12 space-y-8">
-              <!-- MCP 协议核心机制 -->
-              <div
-                class="bg-gradient-to-r from-slate-800/80 to-gray-800/80 rounded-2xl p-8 border border-cyan-500/30 backdrop-blur-sm"
-              >
-                <div class="text-center mb-8">
-                  <h3 class="text-2xl font-bold text-white mb-3">
-                    <span
-                      class="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent"
-                    >
-                      MCP 协议核心机制
-                    </span>
-                  </h3>
-                  <p class="text-gray-300 max-w-3xl mx-auto">
-                    基于标准化 JSON-RPC 协议的模型上下文协议实现
-                  </p>
-                </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                  <!-- 配置驱动 -->
-                  <div class="group">
-                    <div class="flex items-start space-x-4">
-                      <div
-                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                      >
-                        <i class="fas fa-file-code text-white text-xl"></i>
-                      </div>
-                      <div>
-                        <h4
-                          class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300"
-                        >
-                          配置驱动启动
-                        </h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-                          通过标准 MCP
-                          配置文件定义服务启动参数、工具映射和权限控制
-                        </p>
-                        <div
-                          class="bg-gray-900/50 rounded-lg p-3 border border-gray-600/30"
-                        >
-                          <code class="text-xs text-green-400 font-mono">
-                            "command": "uv",<br />
-                            "args": ["--directory", ".", "run", "yop-mcp"]
-                          </code>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 进程间通信 -->
-                  <div class="group">
-                    <div class="flex items-start space-x-4">
-                      <div
-                        class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                      >
-                        <i class="fas fa-exchange-alt text-white text-xl"></i>
-                      </div>
-                      <div>
-                        <h4
-                          class="text-lg font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300"
-                        >
-                          进程间通信
-                        </h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-                          基于 stdio 的安全数据交换，确保本地执行和数据隔离
-                        </p>
-                        <div
-                          class="bg-gray-900/50 rounded-lg p-3 border border-gray-600/30"
-                        >
-                          <code class="text-xs text-purple-400 font-mono">
-                            AI → stdin → yop-mcp → stdout → AI
-                          </code>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <!-- 工具调用映射机制 -->
               <div
@@ -2392,18 +2305,11 @@
                 </div>
                 <code
                   class="text-sm text-green-400 block whitespace-pre-wrap font-mono leading-snug"
-                >
-                  <span class="text-gray-500"># 检查Python版本</span>
-                  <span class="text-cyan-400">python</span>
-                  <span class="text-yellow-400">--version</span>
-                  <span class="text-gray-500"># 安装uv (推荐)</span>
-                  <span class="text-cyan-400">curl</span>
-                  <span class="text-yellow-400">-LsSf</span>
-                  <span class="text-green-400"
-                    >https://astral.sh/uv/install.sh</span
-                  >
-                  <span class="text-yellow-400">|</span>
-                  <span class="text-cyan-400">sh</span></code
+                ><span class="text-gray-500"># 检查Python版本</span>
+<span class="text-cyan-400">python</span> <span class="text-yellow-400">--version</span>
+
+<span class="text-gray-500"># 安装uv (推荐)</span>
+<span class="text-cyan-400">curl</span> <span class="text-yellow-400">-LsSf</span> <span class="text-green-400">https://astral.sh/uv/install.sh</span> <span class="text-yellow-400">|</span> <span class="text-cyan-400">sh</span></code
                 >
               </div>
             </div>
@@ -2664,12 +2570,11 @@
               <p
                 class="text-xl md:text-2xl text-blue-100 mb-10 leading-relaxed drop-shadow-sm"
               >
-                所有准备工作完成后，您就可以开始配置
+                所有准备工作完成后，开始配置
                 <span class="font-bold text-white">YOP MCP</span> 并体验
                 <span
                   class="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-bold"
-                  >AI 驱动的支付集成</span
-                >了。
+                  >AI 驱动的支付集成</span>
               </p>
 
               <!-- Enhanced buttons -->
@@ -2700,49 +2605,7 @@
                 </a>
               </div>
 
-              <!-- Progress stats -->
-              <div
-                class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20"
-              >
-                <div class="text-center group">
-                  <div
-                    class="text-3xl font-bold text-white mb-2 prerequisites-cta-stat transition-all duration-300 group-hover:scale-110"
-                  >
-                    3
-                  </div>
-                  <div
-                    class="text-sm text-blue-100 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                  >
-                    准备项目
-                  </div>
-                </div>
-                <div class="text-center group">
-                  <div
-                    class="text-3xl font-bold text-white mb-2 prerequisites-cta-stat transition-all duration-300 group-hover:scale-110"
-                    style="animation-delay: 0.5s"
-                  >
-                    5min
-                  </div>
-                  <div
-                    class="text-sm text-blue-100 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                  >
-                    配置时间
-                  </div>
-                </div>
-                <div class="text-center group">
-                  <div
-                    class="text-3xl font-bold text-white mb-2 prerequisites-cta-stat transition-all duration-300 group-hover:scale-110"
-                    style="animation-delay: 1s"
-                  >
-                    ∞
-                  </div>
-                  <div
-                    class="text-sm text-blue-100 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                  >
-                    AI 可能性
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -3286,184 +3149,7 @@
           </div>
         </div>
 
-        <!-- Enhanced Success CTA Section -->
-        <div class="mt-20 fade-in-up">
-          <div
-            class="success-cta-enhanced relative overflow-hidden rounded-3xl shadow-2xl"
-          >
-            <!-- Enhanced gradient background with animation -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-green-500 via-emerald-600 to-teal-600 success-cta-bg-animate"
-            ></div>
 
-            <!-- Overlay patterns -->
-            <div class="absolute inset-0 opacity-20">
-              <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern
-                    id="successCtaPattern"
-                    x="0"
-                    y="0"
-                    width="60"
-                    height="60"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <circle cx="30" cy="30" r="2" fill="white" opacity="0.6" />
-                    <circle cx="15" cy="15" r="1" fill="white" opacity="0.4" />
-                    <circle
-                      cx="45"
-                      cy="45"
-                      r="1.5"
-                      fill="white"
-                      opacity="0.5"
-                    />
-                    <path
-                      d="M0,30 L60,30 M30,0 L30,60"
-                      stroke="white"
-                      stroke-width="0.3"
-                      opacity="0.3"
-                    />
-                    <path
-                      d="M15,15 L45,45 M45,15 L15,45"
-                      stroke="white"
-                      stroke-width="0.2"
-                      opacity="0.2"
-                    />
-                  </pattern>
-                </defs>
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="url(#successCtaPattern)"
-                />
-              </svg>
-            </div>
-
-            <!-- Floating elements - 优化版本，减少浮动元素 -->
-            <div class="absolute inset-0 overflow-hidden pointer-events-none">
-              <div
-                class="absolute top-8 left-10 w-3 h-3 bg-white/20 rounded-full animate-pulse success-cta-float"
-              ></div>
-              <div
-                class="absolute bottom-8 right-10 w-3 h-3 bg-white/20 rounded-full animate-pulse success-cta-float"
-                style="animation-delay: 2s"
-              ></div>
-            </div>
-
-            <div class="relative z-10 p-10 md:p-16 text-center">
-              <div class="max-w-3xl mx-auto">
-                <!-- Enhanced success icon with glow -->
-                <div class="flex justify-center mb-8">
-                  <div class="relative">
-                    <!-- Outer glow ring -->
-                    <div
-                      class="absolute inset-0 w-24 h-24 bg-white/30 rounded-full animate-ping"
-                    ></div>
-                    <!-- Icon container -->
-                    <div
-                      class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 shadow-2xl relative z-10 success-cta-icon"
-                    >
-                      <i
-                        class="fas fa-check-circle text-white text-4xl drop-shadow-lg animate-pulse"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Enhanced title -->
-                <h3
-                  class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg success-cta-title"
-                >
-                  配置完成！开始您的第一个集成
-                </h3>
-
-                <!-- Enhanced subtitle -->
-                <p
-                  class="text-xl md:text-2xl text-white mb-10 leading-relaxed drop-shadow-sm"
-                >
-                  恭喜！您已成功配置
-                  <span class="font-bold text-white">YOP MCP</span> 并体验
-                  <span
-                    class="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-bold"
-                    >AI 驱动的支付集成</span
-                  >了。
-                </p>
-
-                <!-- Enhanced buttons -->
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                  <a
-                    href="pages/first-integration.html"
-                    class="success-cta-button-primary group relative overflow-hidden inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-green-600 bg-white hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/50"
-                  >
-                    <div
-                      class="absolute inset-0 bg-gradient-to-r from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    ></div>
-                    <i
-                      class="fas fa-code mr-3 relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:animate-bounce"
-                    ></i>
-                    <span class="relative z-10">开始第一个集成</span>
-                  </a>
-                  <a
-                    href="pages/quick-start.html"
-                    class="success-cta-button-secondary group relative overflow-hidden inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-white border-2 border-white hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-2xl backdrop-blur-sm"
-                  >
-                    <div
-                      class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    ></div>
-                    <i
-                      class="fas fa-book mr-3 relative z-10 transition-transform duration-300 group-hover:scale-110"
-                    ></i>
-                    <span class="relative z-10">查看详细教程</span>
-                  </a>
-                </div>
-
-                <!-- Progress stats -->
-                <div
-                  class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20"
-                >
-                  <div class="text-center group">
-                    <div
-                      class="text-3xl font-bold text-white mb-2 success-cta-stat transition-all duration-300 group-hover:scale-110"
-                    >
-                      2
-                    </div>
-                    <div
-                      class="text-sm text-white opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                    >
-                      配置步骤
-                    </div>
-                  </div>
-                  <div class="text-center group">
-                    <div
-                      class="text-3xl font-bold text-white mb-2 success-cta-stat transition-all duration-300 group-hover:scale-110"
-                      style="animation-delay: 0.5s"
-                    >
-                      5min
-                    </div>
-                    <div
-                      class="text-sm text-white opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                    >
-                      快速上手
-                    </div>
-                  </div>
-                  <div class="text-center group">
-                    <div
-                      class="text-3xl font-bold text-white mb-2 success-cta-stat transition-all duration-300 group-hover:scale-110"
-                      style="animation-delay: 1s"
-                    >
-                      ∞
-                    </div>
-                    <div
-                      class="text-sm text-white opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                    >
-                      AI 可能性
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
