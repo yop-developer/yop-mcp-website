@@ -50,18 +50,43 @@
       href="assets/apple-touch-icon.png"
     />
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <!-- DNS预连接优化 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts 优化加载 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
 
-    <!-- Font Awesome via CDN -->
-    <link rel="stylesheet" href="assets/font-awesome/6.7.2/css/all.min.css" />
+    <!-- 优化的CSS加载 -->
+    <link rel="preload" href="css/styles-optimized.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/styles-optimized.css" /></noscript>
 
-    <!-- 自定义样式 -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- 原始CSS作为回退 -->
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/styles.css" /></noscript>
+
+    <!-- Font Awesome 本地加载优化 -->
+    <link rel="preload" href="assets/font-awesome/6.7.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/font-awesome/6.7.2/css/all.min.css" /></noscript>
+
+    <!-- Tailwind CSS 优化加载 - 延迟到非关键路径 -->
+    <script>
+      // 延迟加载Tailwind CSS以避免阻塞渲染
+      function loadTailwind() {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+      // 在DOM内容加载完成后加载Tailwind
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTailwind);
+      } else {
+        loadTailwind();
+      }
+    </script>
 
     <!-- Enhanced Feature Cards Styles -->
     <style>
@@ -268,38 +293,20 @@
     </script>
   </head>
   <body class="bg-gray-100 text-gray-800">
-    <!-- 科技感背景系统 -->
+    <!-- 优化的科技感背景系统 -->
     <div class="tech-background">
-      <!-- 动态网格纹理 -->
+      <!-- 简化的网格纹理 -->
       <div class="tech-grid"></div>
 
-      <!-- 六边形纹理 -->
-      <div class="tech-hexagon-pattern"></div>
-
-      <!-- 电路纹理 -->
-      <div class="tech-circuit"></div>
-
-      <!-- 动态粒子系统 -->
+      <!-- 精简的粒子系统 -->
       <div class="tech-particles">
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
       </div>
-
-      <!-- 科技光束 -->
-      <div class="tech-beams">
-        <div class="beam"></div>
-        <div class="beam"></div>
-        <div class="beam"></div>
-        <div class="beam"></div>
-      </div>
+    </div>
 
       <!-- 数据流效果 -->
       <div class="tech-data-stream">
@@ -4315,5 +4322,36 @@
     <a href="#" id="back-to-top" class="back-to-top" aria-label="返回顶部">
       <i class="fas fa-arrow-up"></i>
     </a>
+
+    <!-- 性能优化脚本 -->
+    <script src="js/performance-optimized.js" defer></script>
+
+    <!-- 动画优化脚本 -->
+    <script src="optimize-animations.js" defer></script>
+
+    <!-- 性能监控脚本 -->
+    <script>
+      // 简化的性能监控
+      if ('performance' in window) {
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            const navigation = performance.getEntriesByType('navigation')[0];
+            if (navigation) {
+              const loadTime = navigation.loadEventEnd - navigation.navigationStart;
+
+              if (loadTime > 3000) {
+                console.warn('⚠️ 页面加载时间过长:', loadTime + 'ms');
+                // 启动紧急优化
+                if (window.animationOptimizer) {
+                  window.animationOptimizer.emergencyOptimization();
+                }
+              } else if (loadTime > 0) {
+                console.log('✅ 页面加载性能良好:', loadTime + 'ms');
+              }
+            }
+          }, 1000);
+        });
+      }
+    </script>
   </body>
 </html>

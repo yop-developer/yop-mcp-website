@@ -1,0 +1,344 @@
+/* ===== CSS变量定义 - 统一管理颜色和动画参数 ===== */
+:root {
+  /* 颜色变量 */
+  --primary-blue: #3b82f6;
+  --primary-cyan: #00f2fe;
+  --primary-purple: #6366f1;
+  --primary-green: #10b981;
+  --primary-orange: #fb923c;
+  
+  /* 动画时长变量 */
+  --animation-fast: 0.3s;
+  --animation-normal: 0.6s;
+  --animation-slow: 1s;
+  --animation-very-slow: 3s;
+  
+  /* 动画缓动函数 */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* 阴影变量 */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+  
+  /* 渐变变量 */
+  --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+  --gradient-tech: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533a7b 100%);
+  --gradient-glass: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== 字体优化 ===== */
+body, html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-display: swap;
+}
+
+/* ===== 性能优化基础类 ===== */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* ===== 通用动画类 ===== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--animation-normal) var(--ease-smooth), 
+              transform var(--animation-normal) var(--ease-smooth);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-scale {
+  transition: transform var(--animation-fast) var(--ease-smooth), 
+              box-shadow var(--animation-fast) var(--ease-smooth);
+}
+
+.hover-scale:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== 统一的浮动动画 ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.floating-animation {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ===== 统一的脉冲动画 ===== */
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.pulse-animation {
+  animation: pulse var(--animation-very-slow) ease-in-out infinite;
+}
+
+/* ===== 统一的发光效果 ===== */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: var(--shadow-md);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: var(--shadow-glow);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px var(--primary-blue);
+  }
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* ===== 科技背景系统 - 简化版 ===== */
+.tech-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--gradient-tech);
+  pointer-events: none;
+}
+
+/* 简化的网格动画 */
+.tech-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    linear-gradient(rgba(0, 242, 254, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: gridMove 20s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100px, -100px); }
+}
+
+/* 简化的粒子系统 */
+.tech-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, var(--primary-cyan) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloat 15s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(10vh) scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) scale(0);
+    opacity: 0;
+  }
+}
+
+/* 粒子大小和位置变量 */
+.particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { width: 6px; height: 6px; left: 30%; animation-delay: 5s; }
+.particle:nth-child(3) { width: 3px; height: 3px; left: 50%; animation-delay: 10s; }
+.particle:nth-child(4) { width: 5px; height: 5px; left: 70%; animation-delay: 15s; }
+.particle:nth-child(5) { width: 4px; height: 4px; left: 90%; animation-delay: 20s; }
+
+/* ===== 按钮增强效果 ===== */
+.btn-enhanced {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--animation-fast) var(--ease-smooth);
+}
+
+.btn-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--animation-normal);
+}
+
+.btn-enhanced:hover::before {
+  left: 100%;
+}
+
+.btn-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== 卡片增强效果 ===== */
+.card-enhanced {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--animation-fast) var(--ease-smooth);
+  background: var(--gradient-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-enhanced::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform var(--animation-normal);
+}
+
+.card-enhanced:hover::after {
+  transform: translateX(100%);
+}
+
+.card-enhanced:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== 工作流程箭头动画 ===== */
+.workflow-arrow {
+  animation: arrowBounce 2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-5px) translateX(-50%); }
+  60% { transform: translateY(-3px) translateX(-50%); }
+}
+
+/* ===== 统计数字动画 ===== */
+.stat-number {
+  display: inline-block;
+  transition: all var(--animation-fast) var(--ease-bounce);
+}
+
+.stat-number:hover {
+  transform: scale(1.1);
+}
+
+/* ===== 渐变文字效果 ===== */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+  :root {
+    --animation-fast: 0.2s;
+    --animation-normal: 0.4s;
+    --animation-slow: 0.6s;
+  }
+  
+  .tech-grid {
+    background-size: 50px 50px;
+    animation-duration: 15s;
+  }
+  
+  .particle {
+    animation-duration: 12s;
+  }
+  
+  /* 减少移动端的粒子数量 */
+  .particle:nth-child(n + 4) {
+    display: none;
+  }
+  
+  .card-enhanced:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .hover-scale:hover {
+    transform: translateY(-1px) scale(1.01);
+  }
+}
+
+/* ===== 减少动画偏好设置 ===== */
+@media (prefers-reduced-motion: reduce) {
+  .floating-animation,
+  .pulse-animation,
+  .glow-animation,
+  .particle,
+  .workflow-arrow,
+  .tech-grid {
+    animation: none !important;
+  }
+  
+  .hover-scale:hover,
+  .card-enhanced:hover,
+  .btn-enhanced:hover {
+    transform: none !important;
+  }
+  
+  .tech-grid,
+  .tech-particles {
+    opacity: 0.05;
+  }
+}
+
+/* ===== 打印样式优化 ===== */
+@media print {
+  .tech-background,
+  .particle,
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-friendly {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}
