@@ -1,6 +1,8 @@
 /* ===== 字体回退优化 ===== */
-body, html {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+body,
+html {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   font-display: swap; /* 优化字体加载 */
 }
 
@@ -931,38 +933,35 @@ nav.nav-scrolled {
   transform: translateY(-2px);
 }
 
-/* 增强的主要按钮发光动画 - 橙红色调 */
-@keyframes primaryButtonGlow {
+/* 增强的主要按钮发光动画 - 青蓝色调 */
+@keyframes enhancedButtonGlow {
   0% {
-    box-shadow: 0 0 30px rgba(251, 146, 60, 0.6),
-                0 0 60px rgba(251, 146, 60, 0.3),
-                0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.6),
+      0 0 60px rgba(59, 130, 246, 0.3), 0 8px 25px rgba(0, 0, 0, 0.3);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 50px rgba(251, 146, 60, 0.8),
-                0 0 100px rgba(251, 146, 60, 0.5),
-                0 12px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 50px rgba(34, 211, 238, 0.8),
+      0 0 100px rgba(99, 102, 241, 0.5), 0 12px 35px rgba(0, 0, 0, 0.4);
     transform: scale(1.02);
   }
   100% {
-    box-shadow: 0 0 30px rgba(251, 146, 60, 0.6),
-                0 0 60px rgba(251, 146, 60, 0.3),
-                0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.6),
+      0 0 60px rgba(59, 130, 246, 0.3), 0 8px 25px rgba(0, 0, 0, 0.3);
     transform: scale(1);
   }
 }
 
-/* 增强的按钮脉冲效果 - 橙红色调 */
-@keyframes buttonPulse {
+/* 增强的按钮脉冲效果 - 青蓝色调 */
+@keyframes enhancedButtonPulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.7);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7);
   }
   70% {
-    box-shadow: 0 0 0 20px rgba(251, 146, 60, 0);
+    box-shadow: 0 0 0 20px rgba(34, 211, 238, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(251, 146, 60, 0);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
   }
 }
 
@@ -985,7 +984,7 @@ nav.nav-scrolled {
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 12px;
   padding: 16px;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-family: "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
   font-size: 14px;
   line-height: 1.6;
   color: #e2e8f0;
@@ -1005,7 +1004,7 @@ nav.nav-scrolled {
   color: #60a5fa;
   padding: 4px 8px;
   border-radius: 6px;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-family: "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
   font-size: 0.9em;
   font-weight: 600;
   border: 1px solid rgba(59, 130, 246, 0.2);
@@ -1025,13 +1024,18 @@ nav.nav-scrolled {
 }
 
 .hero-button-primary::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -1055,8 +1059,6 @@ nav.nav-scrolled {
   text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   animation: quickStartTitleGlow 3s ease-in-out infinite alternate;
 }
-
-
 
 #quick-start .inline-flex {
   /* 移除强制样式，让Tailwind类生效 */
@@ -1821,8 +1823,6 @@ footer a:hover {
   filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
 }
 
-
-
 /* 增强的移动端响应式优化 */
 @media (max-width: 640px) {
   .hero-title-enhanced {
@@ -1951,8 +1951,6 @@ a:focus-visible {
   outline-offset: 2px;
   border-radius: 0.375rem;
 }
-
-
 
 /* ===== 增强的功能卡片效果 ===== */
 .feature-card-premium {
@@ -2265,8 +2263,6 @@ a:focus-visible {
   transform: scale(1.1) rotate(5deg);
 }
 
-
-
 /* Enhanced card hover effects */
 .card-enhanced:hover {
   transform: translateY(-8px) scale(1.02);
@@ -2301,8 +2297,6 @@ a:focus-visible {
     opacity: 0;
   }
 }
-
-
 
 /* Particle background animations */
 .particle-bg {
@@ -2994,8 +2988,6 @@ a:focus {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-
-
 /* Enhanced form inputs */
 .input-enhanced {
   background: rgba(255, 255, 255, 0.05);
@@ -3212,12 +3204,6 @@ a:focus {
     background-position: 0% 50%;
   }
 }
-
-
-
-
-
-
 
 /* Enhanced accessibility */
 @media (prefers-reduced-motion: reduce) {
@@ -3647,7 +3633,6 @@ img[loading="lazy"].loaded {
 
 /* ===== 增强的响应式优化 ===== */
 @media (max-width: 640px) {
-
   .feature-card-premium:hover {
     transform: translateY(-6px) scale(1.01);
   }
@@ -3718,8 +3703,6 @@ img[loading="lazy"].loaded {
     border: 2px solid #000000 !important;
     color: #000000 !important;
   }
-
-
 }
 
 /* 焦点状态增强 */
@@ -4550,10 +4533,6 @@ img[loading="lazy"].loaded {
   position: relative;
   overflow: hidden;
 }
-
-
-
-
 
 /* ===== 响应式优化 ===== */
 @media (max-width: 768px) {
