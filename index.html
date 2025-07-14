@@ -647,7 +647,7 @@
                       <div
                         class="w-2 h-2 bg-green-500 rounded-full mr-2 enhanced-pulse"
                       ></div>
-                      <span class="text-xs text-green-600">完成</span>
+                      <span class="text-xs text-green-600">生成完成</span>
                     </div>
                   </div>
                   <div
@@ -661,7 +661,6 @@
                         >Python 代码</span
                       >
                       <div class="ml-auto flex items-center space-x-2">
-                        <span class="text-xs text-green-500">✓ 生成完成</span>
                         <button
                           class="text-gray-400 hover:text-green-400 transition-colors copy-code-btn"
                           title="复制代码"
@@ -672,8 +671,8 @@
                       </div>
                     </div>
                     <pre
-                      class="bg-slate-900/50 rounded-md p-3 overflow-x-auto"
-                    ><code id="ai-generated-code" class="block text-green-300 text-sm leading-relaxed font-mono language-python"><span class="text-blue-400">from</span> <span class="text-yellow-300">yop</span> <span class="text-blue-400">import</span> <span class="text-yellow-300">YopClient</span>
+                      class="unified-code-block overflow-x-auto"
+                    ><code id="ai-generated-code" class="block text-green-300 leading-relaxed font-mono language-python"><span class="text-blue-400">from</span> <span class="text-yellow-300">yop</span> <span class="text-blue-400">import</span> <span class="text-yellow-300">YopClient</span>
 
 <span class="text-gray-400"># 初始化客户端</span>
 <span class="text-purple-400">client</span> = <span class="text-yellow-300">YopClient</span>(<span class="text-green-400">"your_app_key"</span>)
@@ -1468,7 +1467,7 @@
             <span class="text-cyan-300 font-semibold">JSON 配置</span>和
             <span class="text-purple-300 font-semibold">stdio 通信</span>机制，
             让AI助手能够安全调用本地
-            <code class="text-blue-300 bg-white/10 px-2 py-1 rounded"
+            <code class="unified-inline-code"
               >yop-mcp</code
             >
             工具， 实现与易宝支付开放平台的智能化交互。
@@ -1623,7 +1622,7 @@
                 <p
                   class="text-sm text-gray-400 transition-colors duration-300 group-hover:text-gray-300"
                 >
-                  启动 <code class="text-purple-300">uv yop-mcp</code> 进程
+                  启动 <code class="unified-inline-code">uv yop-mcp</code> 进程
                 </p>
               </div>
 
@@ -1732,9 +1731,9 @@
                       API 文档查询
                     </h4>
                     <p class="text-gray-400 text-sm mb-3">
-                      <code class="text-emerald-400">yeepay_yop_overview</code
+                      <code class="unified-inline-code">yeepay_yop_overview</code
                       ><br />
-                      <code class="text-emerald-400"
+                      <code class="unified-inline-code"
                         >yeepay_yop_api_detail</code
                       >
                     </p>
@@ -1755,10 +1754,10 @@
                       密钥管理
                     </h4>
                     <p class="text-gray-400 text-sm mb-3">
-                      <code class="text-orange-400"
+                      <code class="unified-inline-code"
                         >yeepay_yop_gen_key_pair</code
                       ><br />
-                      <code class="text-orange-400"
+                      <code class="unified-inline-code"
                         >yeepay_yop_download_cert</code
                       >
                     </p>
@@ -1777,9 +1776,9 @@
                       代码生成
                     </h4>
                     <p class="text-gray-400 text-sm mb-3">
-                      <code class="text-blue-400">yeepay_yop_gen_code</code
+                      <code class="unified-inline-code">yeepay_yop_gen_code</code
                       ><br />
-                      <code class="text-blue-400">yeepay_yop_gen_demo</code>
+                      <code class="unified-inline-code">yeepay_yop_gen_demo</code>
                     </p>
                     <div class="text-xs text-gray-500">智能生成集成代码</div>
                   </div>
@@ -2304,7 +2303,7 @@
                   >
                 </div>
                 <code
-                  class="text-sm text-green-400 block whitespace-pre-wrap font-mono leading-snug"
+                  class="unified-code-block block whitespace-pre-wrap"
                 ><span class="text-gray-500"># 检查Python版本</span>
 <span class="text-cyan-400">python</span> <span class="text-yellow-400">--version</span>
 
@@ -2639,8 +2638,8 @@
             class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
           >
             按照以下步骤快速安装和配置 YOP MCP，开启您的
-            <span class="text-cyan-300 font-semibold">智能集成之旅</span>。
-            从配置到完成，仅需
+            <span class="text-cyan-300 font-semibold">智能集成之旅</span>，
+            仅需
             <span class="text-purple-300 font-semibold">5 分钟</span>。
           </p>
         </div>
@@ -2763,7 +2762,7 @@
                 >
                   在您的本地开发环境安装
                   <code
-                    class="bg-gradient-to-r from-green-100 to-emerald-100 px-3 py-1 rounded-lg text-green-800 font-mono text-base border border-green-200 font-semibold"
+                    class="unified-inline-code"
                     >yop-mcp</code
                   >
                   命令行工具
@@ -2853,11 +2852,11 @@
 
               <!-- Enhanced tip box -->
               <div
-                class="mt-6 p-5 bg-gradient-to-r from-blue-50 via-cyan-50 to-teal-50 rounded-2xl border border-blue-200/50 shadow-lg backdrop-blur-sm quick-start-tip-enhanced relative overflow-hidden"
+                class="mt-6 p-5 bg-gray-50 rounded-2xl border border-gray-200 shadow-lg backdrop-blur-sm quick-start-tip-enhanced relative overflow-hidden"
               >
                 <div class="flex items-start">
                   <div
-                    class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0"
+                    class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0"
                   >
                     <i class="fas fa-lightbulb text-white text-sm"></i>
                   </div>
@@ -2868,12 +2867,12 @@
                     >
                       推荐使用
                       <code
-                        class="bg-blue-100 px-2 py-1 rounded text-blue-900 font-mono text-xs font-bold"
+                        class="unified-inline-code"
                         >uv</code
                       >
                       进行安装，速度更快。 如果遇到权限问题，可以添加
                       <code
-                        class="bg-blue-100 px-2 py-1 rounded text-blue-900 font-mono text-xs font-bold"
+                        class="unified-inline-code"
                         >--user</code
                       >
                       参数。
@@ -3010,7 +3009,7 @@
                 >
                   在您的 IDE 或 AI 编程工具中添加
                   <code
-                    class="bg-gradient-to-r from-purple-100 to-pink-100 px-3 py-1 rounded-lg text-purple-800 font-mono text-base border border-purple-200 font-semibold"
+                    class="unified-inline-code"
                     >MCP 服务器</code
                   >
                   配置
@@ -3112,11 +3111,11 @@
 
               <!-- Enhanced tip box -->
               <div
-                class="mt-6 p-5 bg-gradient-to-r from-purple-50 via-pink-50 to-red-50 rounded-2xl border border-purple-200/50 shadow-lg backdrop-blur-sm quick-start-tip-enhanced relative overflow-hidden"
+                class="mt-6 p-5 bg-gray-50 rounded-2xl border border-gray-200 shadow-lg backdrop-blur-sm quick-start-tip-enhanced relative overflow-hidden"
               >
                 <div class="flex items-start">
                   <div
-                    class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0"
+                    class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0"
                   >
                     <i class="fas fa-magic text-white text-sm"></i>
                   </div>

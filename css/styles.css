@@ -975,6 +975,45 @@ nav.nav-scrolled {
   }
 }
 
+/* 统一的代码块样式 */
+.unified-code-block {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.unified-code-block:hover {
+  border-color: rgba(148, 163, 184, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 统一的内联代码样式 */
+.unified-inline-code {
+  background: rgba(15, 23, 42, 0.6);
+  color: #60a5fa;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+  font-weight: 600;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.unified-inline-code:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
 /* 增强按钮样式 */
 .hero-button-primary {
   position: relative;
@@ -1013,10 +1052,7 @@ nav.nav-scrolled {
   animation: quickStartTitleGlow 3s ease-in-out infinite alternate;
 }
 
-#quick-start p {
-  color: #e2e8f0 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+
 
 #quick-start .inline-flex {
   /* 移除强制样式，让Tailwind类生效 */
@@ -1389,8 +1425,7 @@ code.font-mono {
     background: #000000 !important;
   }
 
-  #quick-start h2,
-  #quick-start p {
+  #quick-start h2 {
     color: #ffffff !important;
     text-shadow: none !important;
   }
@@ -4512,41 +4547,9 @@ img[loading="lazy"].loaded {
   overflow: hidden;
 }
 
-.quick-start-tip-enhanced::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  transform: rotate(45deg);
-  transition: all 0.6s ease;
-  opacity: 0;
-}
 
-.quick-start-card-enhanced:hover .quick-start-tip-enhanced::before {
-  animation: quickStartShimmer 1.5s ease-in-out;
-}
 
-@keyframes quickStartShimmer {
-  0% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
-    opacity: 0;
-  }
-}
+
 
 /* ===== 响应式优化 ===== */
 @media (max-width: 768px) {
@@ -4651,8 +4654,7 @@ img[loading="lazy"].loaded {
     transform: none !important;
   }
 
-  .quick-start-code-enhanced::before,
-  .quick-start-tip-enhanced::before {
+  .quick-start-code-enhanced::before {
     display: none !important;
   }
 }
